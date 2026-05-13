@@ -26,41 +26,39 @@ class TelaRF15LeituraActivity : AppCompatActivity() {
     }
 
     private fun setupListeners(livroId: Int) {
-        // ISSUE 1 — BOTÃO PROCURAR
-        findViewById<Button>(R.id.btnProcurar).setOnClickListener {
+        // PROCURAR
+        findViewById<Button>(R.id.buttonProcurarLivro).setOnClickListener {
             val intent = Intent(this, TelaRF13TelaDoLivro::class.java)
             intent.putExtra("LIVRO_ID", livroId)
-            // Caso seja o Alienista vindo do fluxo mock, passamos o ID 1 ou o que foi recebido
             startActivity(intent)
             finish()
         }
 
-        // ISSUE 2 — ABRIR PDF
-        findViewById<Button>(R.id.btnAbrirPdf).setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            // Mock URI para abrir com seletores do sistema
-            intent.setDataAndType(Uri.parse("https://www.google.com"), "application/pdf")
-            val chooser = Intent.createChooser(intent, "Abrir com")
-            startActivity(chooser)
+        // ABRIR PDF
+        findViewById<Button>(R.id.buttonAbrirPdfLivro).setOnClickListener {
+            val intent = Intent(this, TelaLivroBtnPdf::class.java)
+            startActivity(intent)
         }
 
-        // ISSUE 3 — ABRIR AUDIOBOOK
-        findViewById<Button>(R.id.btnAbrirAudiobook).setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            // Mock URI para áudio
-            intent.setDataAndType(Uri.parse("https://www.spotify.com"), "audio/*")
-            val chooser = Intent.createChooser(intent, "Abrir com")
-            startActivity(chooser)
+        // ABRIR AUDIOBOOK
+        findViewById<Button>(R.id.buttonAbrirAudioLivro).setOnClickListener {
+            val intent = Intent(this, TelaLivroBtnAudiobook::class.java)
+            startActivity(intent)
         }
 
-        // ISSUE 4 — RESERVAR
-        findViewById<Button>(R.id.btnReservar).setOnClickListener {
+        // RESERVAR
+        findViewById<Button>(R.id.buttonReservarLivro).setOnClickListener {
             showTermosCondicoesPopup()
         }
 
-        // ISSUE 5 — SETOR LOCALIZADO
-        findViewById<Button>(R.id.btnSetorLocalizado).setOnClickListener {
+        // SETOR LOCALIZADO
+        findViewById<Button>(R.id.buttonSetorLivro).setOnClickListener {
             showSetorPopup()
+        }
+
+        // ALUGAR (Opcional, se quiser implementar algo)
+        findViewById<Button>(R.id.buttonAlugarLivro).setOnClickListener {
+            Toast.makeText(this, "Funcionalidade de Alugar em desenvolvimento", Toast.LENGTH_SHORT).show()
         }
     }
 

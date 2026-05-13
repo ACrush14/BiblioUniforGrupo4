@@ -2,6 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <queries>
+        <package android:name="com.spotify.music" />
+        <package android:name="com.google.android.apps.docs" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="application/pdf" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="audio/*" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -143,6 +156,12 @@
             android:exported="false" />
         <activity
             android:name=".TelaRF15LeituraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLivroBtnPdf"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLivroBtnAudiobook"
             android:exported="false" />
         <activity
             android:name=".GoogleLoginActivity"

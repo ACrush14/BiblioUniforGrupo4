@@ -4,233 +4,233 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F7">
+    android:background="@color/biblio_bg">
 
-    <!-- HEADER FIXO NO TOPO -->
+    <!-- HEADER -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/header"
+        android:id="@+id/headerRedefinirSenha"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:background="#87DEDE"
+        android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/btnFechar"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="16dp"
-            android:gravity="center"
-            android:text="@string/fechar_x"
-            android:textColor="#1B3434"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
+        <!-- FUNDO DECORATIVO -->
+        <View
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="-100dp"
+            android:layout_marginTop="-100dp"
+            android:alpha="0.3"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- FOTO -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagePerfilRedefinir"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="36dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+        <!-- EMAIL -->
+        <TextView
+            android:id="@+id/textEmailUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Joãobobo@gmail.com"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagePerfilRedefinir" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTEÚDO SCROLLABLE (MEIO) -->
+    <!-- SCROLL -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav">
+        app:layout_constraintTop_toBottomOf="@id/headerRedefinirSenha"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="28dp">
+            android:padding="24dp">
 
+            <!-- TÍTULO -->
             <TextView
+                android:id="@+id/textTituloRedefinir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                android:text="@string/titulo_redefinir"
-                android:textColor="#1B3434"
-                android:textSize="28sp"
+                android:text="Redefinir Senha"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <!-- NOVA SENHA -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nova_senha"
-                android:textColor="#1B3434"
-                android:textSize="16sp"
+                android:layout_marginTop="28dp"
+                android:text="Nova senha"
+                android:textColor="@color/biblio_detalhes"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <!-- ERRO -->
+            <TextView
+                android:id="@+id/textErroNovaSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Campo obrigatório"
+                android:textColor="@color/biblio_red"
+                android:textSize="13sp" />
+
+            <!-- INPUT NOVA SENHA -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_input">
 
                 <EditText
                     android:id="@+id/editNovaSenha"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_input_pill"
-                    android:hint="@string/hint_nova_senha"
-                    android:importantForAutofill="no"
+                    android:layout_toStartOf="@+id/iconOlhoNovaSenha"
+                    android:background="@android:color/transparent"
+                    android:hint="Nova senha"
                     android:inputType="textPassword"
-                    android:paddingHorizontal="20dp"
-                    android:paddingEnd="50dp" />
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:textColor="#444444"
+                    android:textColorHint="#9E9E9E" />
 
                 <ImageView
                     android:id="@+id/iconOlhoNovaSenha"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="8dp"
-                    android:padding="12dp"
-                    android:src="@android:drawable/ic_menu_view"
-                    android:contentDescription="@string/desc_mostrar_ocultar_senha"
-                    app:tint="#1B3434" />
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_eye"
+                    app:tint="@color/black" />
+
             </RelativeLayout>
 
+            <!-- ERRO SENHA ANTIGA -->
             <TextView
-                android:id="@+id/textErroSenha"
+                android:id="@+id/textErroSenhaAntiga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/erro_senha_invalida"
-                android:textColor="#E53935"
-                android:textSize="12sp"
-                android:visibility="gone" />
+                android:layout_marginTop="8dp"
+                android:text="A senha é a mesma da antiga"
+                android:textColor="@color/biblio_red"
+                android:textSize="13sp" />
 
-            <!-- CONFIRMAR SENHA -->
+            <!-- CONFIRMAR -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/confirmar_senha"
-                android:textColor="#1B3434"
-                android:textSize="16sp"
+                android:layout_marginTop="22dp"
+                android:text="Confirmação de senha"
+                android:textColor="@color/biblio_detalhes"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <!-- ERRO -->
+            <TextView
+                android:id="@+id/textErroConfirmacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Campo obrigatório"
+                android:textColor="@color/biblio_red"
+                android:textSize="13sp" />
+
+            <!-- INPUT CONFIRMAR -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_input">
 
                 <EditText
                     android:id="@+id/editConfirmarSenha"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_input_pill"
-                    android:hint="@string/hint_confirmar_senha"
-                    android:importantForAutofill="no"
+                    android:layout_toStartOf="@+id/iconOlhoConfirmar"
+                    android:background="@android:color/transparent"
+                    android:hint="Confirme a senha"
                     android:inputType="textPassword"
-                    android:paddingHorizontal="20dp"
-                    android:paddingEnd="50dp" />
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:textColor="#444444"
+                    android:textColorHint="#9E9E9E" />
 
                 <ImageView
-                    android:id="@+id/iconOlhoConfirmarSenha"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:id="@+id/iconOlhoConfirmar"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="8dp"
-                    android:padding="12dp"
-                    android:src="@android:drawable/ic_menu_view"
-                    android:contentDescription="@string/desc_mostrar_ocultar_senha"
-                    app:tint="#1B3434" />
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_eye"
+                    app:tint="@color/black" />
+
             </RelativeLayout>
 
+            <!-- REGRAS -->
             <TextView
-                android:id="@+id/textErroConfirmar"
+                android:id="@+id/textRegrasSenha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/erro_senhas_nao_coincidem"
-                android:textColor="#E53935"
-                android:textSize="12sp"
-                android:visibility="gone" />
+                android:layout_marginTop="18dp"
+                android:text="• A senha deve conter pelo menos 8 caracteres&#10;• Um número&#10;• Uma letra maiúscula"
+                android:textColor="@color/biblio_red"
+                android:textSize="14sp" />
 
-            <!-- BOTÃO SALVAR -->
+            <!-- ERRO -->
+            <TextView
+                android:id="@+id/textErroSenhas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="As senhas estão diferentes, verifique!"
+                android:textColor="@color/biblio_red"
+                android:textSize="14sp" />
+
+            <!-- BOTÃO -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonSalvar"
+                android:id="@+id/buttonSalvarAlteracoes"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="40dp"
-                android:text="@string/btn_salvar_alteracoes"
+                android:layout_height="58dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="40dp"
+                android:text="Salvar Alterações"
                 android:textAllCaps="false"
-                android:textSize="18sp"
-                android:textColor="@android:color/white"
-                app:backgroundTint="#6CB6B3"
-                app:cornerRadius="30dp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="10dp"
+                app:elevation="4dp" />
 
         </LinearLayout>
+
     </ScrollView>
-
-    <!-- BOTTOM NAVIGATION FIXA NO RODAPÉ -->
-    <LinearLayout
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#FFFFFF"
-        android:elevation="12dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:id="@+id/navHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_view"
-            android:contentDescription="@string/nav_home" />
-
-        <ImageView
-            android:id="@+id/navCarrinho"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_add"
-            android:contentDescription="@string/nav_carrinho" />
-
-        <ImageView
-            android:id="@+id/navBusca"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_search"
-            android:contentDescription="@string/nav_busca" />
-
-        <ImageView
-            android:id="@+id/navFavoritos"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_agenda"
-            android:contentDescription="@string/nav_favoritos" />
-
-        <ImageView
-            android:id="@+id/navLista"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_sort_by_size"
-            android:contentDescription="@string/nav_lista" />
-
-        <ImageView
-            android:id="@+id/navUsuario"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_myplaces"
-            android:contentDescription="@string/nav_usuario" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

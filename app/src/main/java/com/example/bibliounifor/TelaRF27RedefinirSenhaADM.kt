@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -16,10 +17,34 @@ class TelaRF27RedefinirSenhaADM : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.telarf27_redefinir_senha_adm)
 
-        val edtNovaSenha = findViewById<EditText>(R.id.editTextTextPassword)
-        val edtConfirmar = findViewById<EditText>(R.id.editTextTextPassword2)
-        val txtErroSenhasDiferentes = findViewById<TextView>(R.id.textViewErro2)
-        val btnRedefinir = findViewById<Button>(R.id.btnRedefinirSenha)
+        val edtNovaSenha = findViewById<EditText>(R.id.editSenhaNova)
+        val edtConfirmar = findViewById<EditText>(R.id.editConfirmarSenha)
+        val txtErroSenhasDiferentes = findViewById<TextView>(R.id.textErroSenhaDiferente)
+        val btnRedefinir = findViewById<Button>(R.id.buttonRedefinirSenha)
+        val iconOlhoSenhaNova = findViewById<ImageView>(R.id.iconOlhoSenhaNova)
+        val iconOlhoConfirmarSenha = findViewById<ImageView>(R.id.iconOlhoConfirmarSenha)
+
+        var senha1Visivel = false
+        iconOlhoSenhaNova.setOnClickListener {
+            senha1Visivel = !senha1Visivel
+            if (senha1Visivel) {
+                edtNovaSenha.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                edtNovaSenha.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            edtNovaSenha.setSelection(edtNovaSenha.text.length)
+        }
+
+        var senha2Visivel = false
+        iconOlhoConfirmarSenha.setOnClickListener {
+            senha2Visivel = !senha2Visivel
+            if (senha2Visivel) {
+                edtConfirmar.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                edtConfirmar.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            edtConfirmar.setSelection(edtConfirmar.text.length)
+        }
 
         btnRedefinir.setOnClickListener {
             val senha1 = edtNovaSenha.text.toString()
