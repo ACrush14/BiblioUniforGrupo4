@@ -2,6 +2,8 @@ package com.example.bibliounifor
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
@@ -14,6 +16,21 @@ class TelaRF40ConfigADM : AppCompatActivity() {
 
         // 👇 Padronização da Navegação ADM
         NavigationUtils.setupAdminNavigation(this)
+
+        // MOSTRAR/OCULTAR SENHA
+        val editSenhaAtual = findViewById<EditText>(R.id.editSenhaAtual)
+        val iconOlho = findViewById<ImageView>(R.id.iconOlhoSenhaAtual)
+        var senhaVisivel = false
+
+        iconOlho?.setOnClickListener {
+            senhaVisivel = !senhaVisivel
+            if (senhaVisivel) {
+                editSenhaAtual?.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                editSenhaAtual?.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            editSenhaAtual?.setSelection(editSenhaAtual.text.length)
+        }
 
         // Botões específicos da tela de configuração
         val btnRedefinirSenha = findViewById<MaterialButton>(R.id.btnRedefinirSenha)

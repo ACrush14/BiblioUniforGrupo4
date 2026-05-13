@@ -2,10 +2,12 @@ package com.example.bibliounifor
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -17,9 +19,33 @@ class TelaRF08RedefinirSenha : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.telarf08_redefinicao_de_senha)
 
-        val editSenha1 = findViewById<EditText>(R.id.editSenha1)
-        val editSenha2 = findViewById<EditText>(R.id.editSenha2)
-        val btnRedefinir = findViewById<Button>(R.id.btnRedefinirSenha1)
+        val editSenha1 = findViewById<EditText>(R.id.editSenhaNova)
+        val editSenha2 = findViewById<EditText>(R.id.editConfirmarSenha)
+        val iconOlho1 = findViewById<ImageView>(R.id.iconOlhoSenhaNova)
+        val iconOlho2 = findViewById<ImageView>(R.id.iconOlhoConfirmarSenha)
+        val btnRedefinir = findViewById<Button>(R.id.buttonRedefinirSenha)
+
+        var senha1Visivel = false
+        iconOlho1.setOnClickListener {
+            senha1Visivel = !senha1Visivel
+            if (senha1Visivel) {
+                editSenha1.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                editSenha1.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            editSenha1.setSelection(editSenha1.text.length)
+        }
+
+        var senha2Visivel = false
+        iconOlho2.setOnClickListener {
+            senha2Visivel = !senha2Visivel
+            if (senha2Visivel) {
+                editSenha2.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                editSenha2.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            editSenha2.setSelection(editSenha2.text.length)
+        }
         
         val textErroDiferente = findViewById<TextView>(R.id.textErroDiferente)
         val textErroRequisitos = findViewById<TextView>(R.id.textRequisitosSenha)

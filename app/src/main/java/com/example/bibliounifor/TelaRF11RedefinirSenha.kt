@@ -2,6 +2,7 @@ package com.example.bibliounifor
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -22,6 +23,31 @@ class TelaRF11RedefinirSenha : AppCompatActivity() {
         val editNovaSenha = findViewById<EditText>(R.id.editNovaSenha)
         val editConfirmarSenha = findViewById<EditText>(R.id.editConfirmarSenha)
         val btnSalvar = findViewById<MaterialButton>(R.id.buttonSalvar)
+        val iconOlhoNova = findViewById<ImageView>(R.id.iconOlhoNovaSenha)
+        val iconOlhoConfirmar = findViewById<ImageView>(R.id.iconOlhoConfirmarSenha)
+
+        // LÓGICA MOSTRAR/OCULTAR SENHA
+        var novaSenhaVisivel = false
+        iconOlhoNova.setOnClickListener {
+            novaSenhaVisivel = !novaSenhaVisivel
+            if (novaSenhaVisivel) {
+                editNovaSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                editNovaSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            editNovaSenha.setSelection(editNovaSenha.text.length)
+        }
+
+        var confirmarSenhaVisivel = false
+        iconOlhoConfirmar.setOnClickListener {
+            confirmarSenhaVisivel = !confirmarSenhaVisivel
+            if (confirmarSenhaVisivel) {
+                editConfirmarSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                editConfirmarSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            editConfirmarSenha.setSelection(editConfirmarSenha.text.length)
+        }
 
         // MENSAGENS DE ERRO
         val erroObrigatorio = findViewById<TextView>(R.id.textErroSenha)

@@ -2,6 +2,7 @@ package com.example.bibliounifor
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,21 @@ class TelaRF03LoginAluno : AppCompatActivity() {
         // CAMPOS
         val email = findViewById<EditText>(R.id.editEmail)
         val senha = findViewById<EditText>(R.id.editSenha)
+        val iconOlho = findViewById<ImageView>(R.id.iconOlhoSenha)
+
+        // LÓGICA MOSTRAR/OCULTAR SENHA
+        var senhaVisivel = false
+        iconOlho.setOnClickListener {
+            senhaVisivel = !senhaVisivel
+            if (senhaVisivel) {
+                senha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                iconOlho.setImageResource(android.R.drawable.ic_menu_view) // Pode trocar por um ícone de "olho fechado" se disponível
+            } else {
+                senha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                iconOlho.setImageResource(android.R.drawable.ic_menu_view)
+            }
+            senha.setSelection(senha.text.length)
+        }
 
         // BOTÃO
         val botaoEntrar = findViewById<Button>(R.id.buttonEntrar)
