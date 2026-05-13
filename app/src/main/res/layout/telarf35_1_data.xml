@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F7"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- TÍTULO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Escolha a data de publicação"
+        android:textColor="#1B3434"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- CARD DO CALENDÁRIO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input_rounded"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="true"
+            android:datePickerMode="spinner" />
+
+    </LinearLayout>
+
+    <!-- BOTÃO CONFIRMAR -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmarData"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:text="Confirmar"
+        app:backgroundTint="#6EC1C3"
+        app:cornerRadius="12dp" />
+
+    <!-- VOLTAR -->
+    <TextView
+        android:id="@+id/btnVoltarData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Voltar"
+        android:textColor="#6EC1C3"
+        android:textSize="16sp" />
+
+</LinearLayout>

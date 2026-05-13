@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F7">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#6EC1C3"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAvatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="0dp">
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/osda" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:text="Tela de CRUD"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCriarMidia"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Criar Mídia"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#6EC1C3"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVerificarMidia"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Verificar Mídia"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#6EC1C3"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGerenciarUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Gerenciar usuário"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#6EC1C3"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMudarPermissao"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Mudar permissão de usuário"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#6EC1C3"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnApagarUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Apagar Usuário"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#D65252"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnApagarMidia"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Apagar Mídia"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:backgroundTint="#D65252"
+            app:cornerRadius="12dp"/>
+
+    </LinearLayout>
+
+    <!-- BOTTOM NAV -->
+    <include
+        android:id="@+id/bottomNavigation"
+        layout="@layout/bottom_navigation_adm"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F7">
+
+    <!-- HEADER FIXO NO TOPO -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#87DEDE"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/btnFechar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="@string/fechar_x"
+            android:textColor="#1B3434"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- CONTEÚDO SCROLLABLE (MEIO) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:text="@string/titulo_redefinir"
+                android:textColor="#1B3434"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- NOVA SENHA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nova_senha"
+                android:textColor="#1B3434"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editNovaSenha"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_pill"
+                android:hint="@string/hint_nova_senha"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/textErroSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/erro_senha_invalida"
+                android:textColor="#E53935"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <!-- CONFIRMAR SENHA -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/confirmar_senha"
+                android:textColor="#1B3434"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editConfirmarSenha"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_pill"
+                android:hint="@string/hint_confirmar_senha"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/textErroConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/erro_senhas_nao_coincidem"
+                android:textColor="#E53935"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <!-- BOTÃO SALVAR -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSalvar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/btn_salvar_alteracoes"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                app:backgroundTint="#6CB6B3"
+                app:cornerRadius="30dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAVIGATION FIXA NO RODAPÉ -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#FFFFFF"
+        android:elevation="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_view"
+            android:contentDescription="@string/nav_home" />
+
+        <ImageView
+            android:id="@+id/navCarrinho"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_add"
+            android:contentDescription="@string/nav_carrinho" />
+
+        <ImageView
+            android:id="@+id/navBusca"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="@string/nav_busca" />
+
+        <ImageView
+            android:id="@+id/navFavoritos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_agenda"
+            android:contentDescription="@string/nav_favoritos" />
+
+        <ImageView
+            android:id="@+id/navLista"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="@string/nav_lista" />
+
+        <ImageView
+            android:id="@+id/navUsuario"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            android:contentDescription="@string/nav_usuario" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

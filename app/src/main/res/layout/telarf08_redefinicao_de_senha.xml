@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7F7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#87DEDE"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="Ícone do app" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Acesse sua Conta"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- CONTEÚDO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textTituloRedefinirSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/titulo_redefinir"
+                android:textColor="#415E5E"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/textDescricaoRedefinirSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/descricao_redefinir"
+                android:textColor="#415E5E"
+                android:layout_marginBottom="16dp" />
+
+            <!-- SENHA 1 -->
+            <EditText
+                android:id="@+id/editSenha1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/nova_senha"
+                android:inputType="textPassword"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/textCampoObrigatorio1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/erro_campo"
+                android:textColor="#F44336"
+                android:layout_marginBottom="8dp" />
+
+            <!-- SENHA 2 -->
+            <EditText
+                android:id="@+id/editSenha2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/confirmar_senha"
+                android:inputType="textPassword"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/textCampoObrigatorio2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/erro_campo"
+                android:textColor="#F44336"
+                android:layout_marginBottom="8dp" />
+
+            <!-- REQUISITOS -->
+            <TextView
+                android:id="@+id/textRequisitosSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/requisitos_senha"
+                android:textColor="#415E5E"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/textErroIgual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/erro_senha_igual"
+                android:textColor="#F44336"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/textErroDiferente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/erro_senha_diferente"
+                android:textColor="#F44336"
+                android:layout_marginBottom="16dp" />
+
+            <!-- BOTÃO PRINCIPAL -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRedefinirSenha1"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="@string/btn_redefinir"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                app:backgroundTint="#87DEDE"
+                app:cornerRadius="30dp"
+                app:elevation="6dp" />
+
+            <!-- VOLTAR -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVoltarTelaRedefinirSenha"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="@string/voltar"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:backgroundTint="#415E5E"
+                app:cornerRadius="30dp"
+                app:elevation="6dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

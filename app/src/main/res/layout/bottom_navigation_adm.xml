@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomNavigationAdm"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="#FFFFFF"
+    android:elevation="8dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <!-- 1. Casa -> Dashboard ADM (RF30) -->
+    <ImageView
+        android:id="@+id/navHomeAdm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="15dp"
+        android:src="@drawable/ic_casinha"
+        android:contentDescription="Dashboard ADM" />
+
+    <!-- 2. Cifrão -> Financeiro ADM (RF36) -->
+    <ImageView
+        android:id="@+id/navFinanceiroAdm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="15dp"
+        android:src="@android:drawable/ic_menu_save"
+        android:contentDescription="Financeiro ADM" />
+
+    <!-- 3. Interrogação -> Verificar Mídia (RF33) -->
+    <ImageView
+        android:id="@+id/navSolicitacoesAdm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="15dp"
+        android:src="@android:drawable/ic_menu_help"
+        android:contentDescription="Verificar Mídia" />
+
+    <!-- 4. Livros -> Verificar Mídia (RF42) -->
+    <ImageView
+        android:id="@+id/navVerificarMidiaAdm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="15dp"
+        android:src="@android:drawable/ic_menu_agenda"
+        android:contentDescription="Verificar Mídia Livros" />
+
+    <!-- 5. Pessoa -> Gerenciamento Usuários (RF31) -->
+    <ImageView
+        android:id="@+id/navGerenciarUsuariosAdm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="15dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:contentDescription="Gerenciamento de Usuários" />
+
+</LinearLayout>

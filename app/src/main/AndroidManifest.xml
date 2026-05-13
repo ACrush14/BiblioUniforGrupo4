@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BiblioUnifor">
+        <activity
+            android:name=".Appnavigation00Activity"
+            android:exported="false" />
+        <!-- TELAS DE RECUPERAÇÃO DE SENHA -->
+        <activity
+            android:name=".TelaRF07ValidacaoDeCodigo"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF08RedefinirSenha"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF27RedefinirSenhaADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF28NovaContaADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF40ConfigADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF37ConfirmarCadastroADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF39InfoLivroADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF38ListaAlugueisADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF36FinanceiroADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF31GerenciamentoDeUsuarios"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF19"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF18"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF35CadastroDeLivros"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF32UsuariosParaADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF35_1Data"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF35_3InfosAdicionais"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF35_4Versoes"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF11RedefinirSenha"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF33Solicitacoes"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF10Configuracao"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF34LivrosCRUD"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF03LoginAluno"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF02Intermediaria"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF09DashboardUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".RF09DashboardUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF16MinhaLivrariaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF17ListaDesejosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF22Historico"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF30DashboardADM"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF24"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF25"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF30CrudADM"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF04UsuarioGoogle"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF05CadastroNovoUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF06RecuperacaoSenha"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF12TelaDePesquisa"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF13TelaDoLivro"
+            android:exported="false" />
+        <activity
+            android:name=".RF14TelaVerMaisLivro"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF20Solicitacoes"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF20SolicitacoesTermosCondicoes"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF20SolicitacoesVoltarBiblioteca"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF15LeituraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GoogleLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF41RedefinirADMInterno"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF42VerificarMidia"
+            android:exported="false" /> <!-- TELAS RF33 -->
+        <activity
+            android:name=".TelaRF33VerificarMidia"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRF332Filtro"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".TelaRF335UsuarioNotificado"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".TelaRF336BrailleConcluido"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".TelaRF337ExcluirSolicitacao"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".TelaRF01BemVindo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F7">
+
+    <!-- TÍTULO -->
+    <TextView
+        android:id="@+id/tvTituloRenovacaoAluguel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_renovacao_aluguel"
+        android:textColor="#415E5E"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- DESCRIÇÃO -->
+    <TextView
+        android:id="@+id/tvDescricaoRenovacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/descricao_renovacao_aluguel"
+        android:textColor="#415E5E"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloRenovacaoAluguel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- CALENDÁRIO -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input_rounded"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDescricaoRenovacao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- BOTÃO CONFIRMAR -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmarData"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="@string/btn_confirmar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="#6CB6B3"
+        app:cornerRadius="30dp"
+        app:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/calendarView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- VOLTAR -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/textVoltarDaRenovacao"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="@string/voltar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="#415E5E"
+        app:cornerRadius="30dp"
+        app:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/btnConfirmarData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

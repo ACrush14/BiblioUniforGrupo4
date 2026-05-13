@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F7">
+
+    <!-- HEADER -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="#87DEDE"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_input_rounded"
+            android:padding="6dp"
+            android:contentDescription="Capa do livro"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/o_alienista_capa" />
+
+        <TextView
+            android:id="@+id/tvTituloLivro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/titulo_livro"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="@id/imageView" />
+
+        <TextView
+            android:id="@+id/tvAutor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/autor_livro"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloLivro" />
+
+        <TextView
+            android:id="@+id/tvGenero"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/genero_livro"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/tvAutor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- BOTÕES -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSolicitarPdf"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="@string/btn_solicitar_pdf"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="#87DEDE"
+        app:cornerRadius="30dp"
+        app:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSolicitarBraile"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="@string/btn_solicitar_braile"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="#6CB6B3"
+        app:cornerRadius="30dp"
+        app:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSolicitarPdf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSolicitarAudiobook"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="@string/btn_solicitar_audiobook"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="#6CB6B3"
+        app:cornerRadius="30dp"
+        app:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSolicitarBraile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReservar"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="@string/btn_reservar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="#415E5E"
+        app:cornerRadius="30dp"
+        app:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSolicitarAudiobook"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSetorLocalizado"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:text="Setor Localizado"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"
+        app:backgroundTint="#415E5E"
+        app:cornerRadius="30dp"
+        app:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/btnReservar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- BARRA INFERIOR -->
+    <LinearLayout
+        android:id="@+id/bottomNavigationUsuario"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_view"
+            app:tint="#A0A0A0" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_search"
+            app:tint="#A0A0A0" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_compass"
+            app:tint="#A0A0A0" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_agenda"
+            app:tint="#A0A0A0" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            app:tint="#1B3434" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

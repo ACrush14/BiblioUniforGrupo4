@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7F7">
+
+    <!-- HEADER CYAN -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerConfig"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#87DEDE"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Imagem de Perfil -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/o_alienista_capa"
+            android:contentDescription="@string/desc_perfil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="2dp" />
+
+        <!-- Nome/Email e Botão Editar -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileImg">
+
+            <TextView
+                android:id="@+id/textUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email_usuario_exemplo"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnEditarUsuario"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_edit"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/desc_editar_usuario"
+                app:tint="#1B3434" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- CONTEÚDO SCROLL -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintTop_toBottomOf="@id/headerConfig">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- PESQUISA -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_pill"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:contentDescription="@string/desc_pesquisa" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/label_pesquisa"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- NOME -->
+            <TextView
+                android:id="@+id/labelNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_nome"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp">
+                <EditText
+                    android:id="@+id/editNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/bg_input_pill"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/nome_usuario"
+                    android:textColor="#444444"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:hint="@string/hint_nome"
+                    android:labelFor="@id/labelNome" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="4dp"
+                    android:padding="10dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:contentDescription="@string/desc_editar_campo" />
+            </RelativeLayout>
+
+            <!-- USUÁRIO -->
+            <TextView
+                android:id="@+id/labelUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_usuario"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp">
+                <EditText
+                    android:id="@+id/editUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/bg_input_pill"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/usuario_exemplo"
+                    android:textColor="#444444"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:hint="@string/hint_usuario"
+                    android:labelFor="@id/labelUsuario" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="4dp"
+                    android:padding="10dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:contentDescription="@string/desc_editar_campo" />
+            </RelativeLayout>
+
+            <!-- BIO -->
+            <TextView
+                android:id="@+id/labelBio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_bio"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp">
+                <EditText
+                    android:id="@+id/editBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_input_rounded"
+                    android:gravity="top"
+                    android:minHeight="140dp"
+                    android:padding="16dp"
+                    android:text="@string/bio_exemplo"
+                    android:textColor="#444444"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:hint="@string/hint_bio"
+                    android:labelFor="@id/labelBio" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:padding="10dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:contentDescription="@string/desc_editar_campo" />
+            </RelativeLayout>
+
+            <!-- SENHA ATUAL -->
+            <TextView
+                android:id="@+id/labelSenhaAtual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_senha_atual"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/editSenhaAtual"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_input_pill"
+                android:inputType="textPassword"
+                android:paddingHorizontal="16dp"
+                android:text="@string/placeholder_senha"
+                android:textColor="#444444"
+                android:importantForAutofill="no"
+                android:labelFor="@id/labelSenhaAtual" />
+
+            <!-- BOTÕES -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRedefinirSenha"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/btn_redefinir_senha_config"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#6CB6B3" app:cornerRadius="15dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVoltarTelaInicial"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/btn_voltar_inicial"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#6CB6B3" app:cornerRadius="15dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnApagarConta"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/btn_apagar_conta_config"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#D26262" app:cornerRadius="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAVIGATION FIXA NO RODAPÉ -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#FFFFFF"
+        android:elevation="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_view"
+            android:contentDescription="@string/nav_home_desc" />
+
+        <ImageView
+            android:id="@+id/navCarrinho"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_add"
+            android:contentDescription="@string/nav_carrinho_desc" />
+
+        <ImageView
+            android:id="@+id/navBusca"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="@string/nav_busca_desc" />
+
+        <ImageView
+            android:id="@+id/navFavoritos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_agenda"
+            android:contentDescription="@string/nav_favoritos_desc" />
+
+        <ImageView
+            android:id="@+id/navLista"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="@string/nav_lista_desc" />
+
+        <ImageView
+            android:id="@+id/navUsuario"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="18dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            android:contentDescription="@string/nav_perfil_desc" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white"> <!-- Cor de fundo suave conforme a imagem -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- ÁREA DO ÍCONE (Sem o bloco colorido sólido) -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <!-- Elemento decorativo: Mancha clara no canto superior esquerdo -->
+            <View
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="-100dp"
+                android:layout_marginTop="-100dp"
+                android:alpha="0.3"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#87DEDE"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageIconRecuperarSenha"
+                android:layout_width="123dp"
+                android:layout_height="121dp"
+                android:layout_gravity="center"
+                android:contentDescription="Ícone do aplicativo"
+                android:src="@mipmap/ic_launcher_round" />
+        </FrameLayout>
+
+        <!-- CONTEÚDO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="32dp"
+            android:paddingBottom="24dp">
+
+            <!-- TÍTULO -->
+            <TextView
+                android:id="@+id/textTituloRecuperarSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Redefinir Senha"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- DESCRIÇÃO -->
+            <TextView
+                android:id="@+id/textDescricaoRecuperarSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Insira abaixo o e-mail vinculado à sua conta."
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+            <!-- INPUT EMAIL (Verifique se o seu @drawable/bg_input é arredondado e branco) -->
+            <EditText
+                android:id="@+id/editTextEmailREC"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_input"
+                android:hint="Digite seu e-mail"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="20dp"
+                android:textColor="#000000"
+                android:elevation="2dp" />
+
+            <!-- BOTÃO ENVIAR (Verde Água do design novo) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonEnviarCOD"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="24dp"
+                android:text="Enviar Código"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_cyan"
+                app:cornerRadius="30dp" />
+
+            <!-- BOTÃO VOLTAR (Estilo Dark como na imagem) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonVoltarLog"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="16dp"
+                android:text="Retornar à tela de login"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_dark"
+                app:cornerRadius="30dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
