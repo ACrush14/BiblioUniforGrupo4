@@ -157,8 +157,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Esqueceu a Senha?"
-            android:textColor="@color/biblio_detalhes"
+            android:textColor="@color/biblio_blue"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/editCredencialAdm"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -205,8 +206,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Crie aqui"
-                android:textColor="@color/biblio_detalhes"
-                android:textSize="15sp" />
+                android:textColor="@color/biblio_blue"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

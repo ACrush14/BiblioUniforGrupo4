@@ -116,8 +116,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="Retornar à tela de login"
-        android:textColor="@color/biblio_detalhes"
+        android:textColor="@color/biblio_blue"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonEnviarCOD" />

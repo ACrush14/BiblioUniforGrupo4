@@ -6,301 +6,378 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER CYAN PADRONIZADO -->
-    <LinearLayout
-        android:id="@+id/headerPadrao"
+    <!-- HEADER -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerDetalhesLivro"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#6EC1C3"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="16dp"
+        android:layout_height="220dp"
+        android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/btnNotificacao"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/ic_popup_reminder"
-            android:contentDescription="Notificações"
-            app:tint="@android:color/black" />
+        <!-- FUNDO -->
+        <View
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="-100dp"
+            android:layout_marginTop="-100dp"
+            android:alpha="0.3"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <!-- CAPA -->
+        <ImageView
+            android:id="@+id/imageLivroDetalhes"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="28dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/o_alienista_capa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- INFOS -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="16dp"
-            android:text="Detalhes do Livro"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageLivroDetalhes"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/btnConfig"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_manage"
-            android:contentDescription="Configurações"
-            app:tint="@android:color/black" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textTituloLivro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O Alienista"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAutorLivro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Machado de Assis"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- BOTÃO -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonListaDesejos"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="18dp"
+                android:text="Lista de Desejos ♡"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="2dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSuaLivraria"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:text="Sua Livraria"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="2dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- SCROLL -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/headerPadrao"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavContainer">
+        app:layout_constraintTop_toBottomOf="@id/headerDetalhesLivro"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            <!-- 🔷 HEADER LIVRO -->
+            <!-- LINHA 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/biblio_cyan"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/imgCapaLivroDetalhe"
-                    android:layout_width="120dp"
-                    android:layout_height="180dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/o_alienista_capa" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="12dp">
-
-                    <TextView
-                        android:id="@+id/txtTituloLivroDetalhe"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Titulo do livro"
-                        android:textColor="@android:color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtAutorLivroDetalhe"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:text="Nome do autor(a)"
-                        android:textColor="@android:color/black" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"
-                        android:text="Lista de desejos"
-                        android:textColor="@android:color/white"
-                        app:backgroundTint="@color/biblio_dark"
-                        app:cornerRadius="20dp" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sua livraria"
-                        android:textColor="@android:color/white"
-                        app:backgroundTint="@color/biblio_dark"
-                        app:cornerRadius="20dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- 🔘 BOTÕES -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- linha 1 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Não lido"
-                        app:backgroundTint="@color/biblio_cyan" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_height="55dp"
-                        android:layout_weight="1"
-                        android:text="Lendo"
-                        app:backgroundTint="@color/biblio_cyan" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_height="55dp"
-                        android:layout_weight="1"
-                        android:text="Lido"
-                        app:backgroundTint="@color/biblio_cyan" />
-                </LinearLayout>
-
-                <!-- linha 2 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnLerLivro"
-                        android:layout_width="0dp"
-                        android:layout_height="58dp"
-                        android:layout_weight="1"
-                        android:text="Ler"
-                        app:backgroundTint="@color/biblio_cyan"
-                        app:cornerRadius="40dp" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_height="55dp"
-                        android:layout_weight="1"
-                        android:text="Alugar"
-                        app:backgroundTint="@color/biblio_cyan" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnSolicitarLivro"
-                        android:layout_width="0dp"
-                        android:layout_height="55dp"
-                        android:layout_weight="1"
-                        android:text="Solicitar"
-                        app:backgroundTint="@color/biblio_cyan" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- ⭐ NOTA + DISPONIBILIDADE -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <!-- esquerda -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sua nota"
-                        android:textStyle="bold" />
-
-                    <RatingBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:numStars="5" />
-                </LinearLayout>
-
-                <!-- direita -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:text="Disponível? Sim"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"/>
-
-                    <TextView
-                        android:text="Estoque: 5"
-                         android:layout_height="wrap_content"
-                         android:textStyle="bold"
-                         android:layout_width="wrap_content"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- 📖 SOBRE -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="Sobre"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/txtSobreLivroDetalhe"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="..." />
-            </LinearLayout>
-
-            <!-- categoria + botão -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:orientation="horizontal"
-                android:paddingHorizontal="16dp">
+                android:layout_height="58dp"
+                android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
-                    android:layout_width="wrap_content"
+                    android:id="@+id/buttonNaoLido"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:text="categoria"
-                    app:backgroundTint="@color/biblio_cyan" />
+                    android:layout_weight="1"
+                    android:text="Não lido"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
 
                 <Space
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_width="6dp"
+                    android:layout_height="wrap_content" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnVerMaisLivro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="52dp"
-                    android:text="Ver mais"
-                    app:backgroundTint="@color/biblio_cyan" />
+                    android:id="@+id/buttonLendo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Lendo"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
+                <Space
+                    android:layout_width="6dp"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonLido"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Lido"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
             </LinearLayout>
 
+            <!-- LINHA 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonAlugar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Alugar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
+                <Space
+                    android:layout_width="6dp"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSolicitar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Solicitar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
+                <Space
+                    android:layout_width="6dp"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonLer"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="LER"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+            <!-- NOTA -->
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Sua nota"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/ratingLivro"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:numStars="5"
+                android:rating="4"
+                android:stepSize="1" />
+
+            <!-- DISPONIBILIDADE -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Disponível? "
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"
+                    android:textColor="#666666"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- ESTOQUE -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantidade em estoque: "
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="#666666"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- SOBRE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Sobre"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textSobreLivro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Avaliações(0)"
-                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="2dp"
+                android:text="Machado de Assis, neste livro, propõe a seguinte pergunta: quem é louco? Conheça a história do médico Simão Bacamarte, dedicado e estudioso da mente humana, que decide construir um hospício para tratar os doentes mentais na pequena cidade de Itaguaí a casa verde. Quem entra e quem fica de fora? Surpreenda-se com o final."
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <!-- BOTÕES FINAIS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonCategoria"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Ficção\nPsicológica"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
+                <Space
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonVerMais"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Ver mais"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/biblio_detalhes"
+                    app:cornerRadius="2dp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+            <!-- AVALIAÇÕES -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Avaliações (0)"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="16dp"/>
+                android:layout_height="120dp" />
 
         </LinearLayout>
-    </ScrollView>
 
-    <!-- BOTTOM NAV CONTAINER -->
-    <FrameLayout
-        android:id="@+id/bottomNavContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <include layout="@layout/bottom_navigation_placeholder" />
-    </FrameLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

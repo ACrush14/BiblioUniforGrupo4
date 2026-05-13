@@ -25,6 +25,21 @@ class TelaRF10Configuracao : AppCompatActivity() {
         val btnRedefinir = findViewById<MaterialButton>(R.id.btnRedefinirSenha)
         val btnApagar = findViewById<MaterialButton>(R.id.btnApagarConta)
 
+        // MOSTRAR/OCULTAR SENHA - CAMPO PRINCIPAL
+        val edtSenhaAtual = findViewById<EditText>(R.id.editSenhaAtual)
+        val iconOlhoSenhaAtual = findViewById<ImageView>(R.id.iconOlhoSenhaAtual)
+        var senhaAtualVisivel = false
+
+        iconOlhoSenhaAtual.setOnClickListener {
+            senhaAtualVisivel = !senhaAtualVisivel
+            if (senhaAtualVisivel) {
+                edtSenhaAtual.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                edtSenhaAtual.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            edtSenhaAtual.setSelection(edtSenhaAtual.text.length)
+        }
+
         btnRedefinir.setOnClickListener {
             val intent = Intent(this, TelaRF11RedefinirSenha::class.java)
             startActivity(intent)
@@ -71,9 +86,9 @@ class TelaRF10Configuracao : AppCompatActivity() {
         val viewPopup = layoutInflater.inflate(R.layout.telarf10_10_apagar_conta, null)
 
         val editSenha = viewPopup.findViewById<EditText>(R.id.editSenhaPopup)
-        val textErro = viewPopup.findViewById<TextView>(R.id.textErroPopup)
-        val iconOlho = viewPopup.findViewById<ImageView>(R.id.iconOlho)
-        val btnConfirmarPopup = viewPopup.findViewById<Button>(R.id.btnConfirmarPopup)
+        val textErro = viewPopup.findViewById<TextView>(R.id.textErroSenhaPopup)
+        val iconOlho = viewPopup.findViewById<ImageView>(R.id.iconOlhoSenhaPopup)
+        val btnConfirmarPopup = viewPopup.findViewById<Button>(R.id.buttonConfirmarApagarConta)
 
         val dialog = AlertDialog.Builder(this)
             .setView(viewPopup)

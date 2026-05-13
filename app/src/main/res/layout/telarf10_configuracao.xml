@@ -1,345 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F7">
+    android:background="@color/biblio_bg">
 
-    <!-- HEADER CYAN -->
+    <!-- HEADER -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerConfig"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="#87DEDE"
+        android:layout_height="230dp"
+        android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Imagem de Perfil -->
+        <!-- Fundo decorativo -->
+        <View
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="-100dp"
+            android:layout_marginTop="-100dp"
+            android:alpha="0.3"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Foto perfil -->
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/profileImg"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:padding="2dp"
+            android:id="@+id/imagePerfilUsuario"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="38dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/o_alienista_capa"
-            android:contentDescription="@string/desc_perfil"
+            android:src="@drawable/user_placeholder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-            app:strokeColor="#FFFFFF"
-            app:strokeWidth="2dp" />
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
-        <!-- Nome/Email e Botão Editar -->
+        <!-- Email + editar -->
         <LinearLayout
+            android:id="@+id/layoutEmailUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/profileImg">
+            app:layout_constraintTop_toBottomOf="@id/imagePerfilUsuario">
 
             <TextView
                 android:id="@+id/textUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/email_usuario_exemplo"
-                android:textColor="@android:color/white"
+                android:text="Joãobobo@gmail.com"
+                android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/btnEditarUsuario"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="8dp"
-                android:padding="8dp"
                 android:src="@android:drawable/ic_menu_edit"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/desc_editar_usuario"
-                app:tint="#1B3434" />
+                app:tint="@color/black" />
+
         </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTEÚDO SCROLL -->
+    <!-- CONTEÚDO -->
     <ScrollView
-        android:id="@+id/scrollView"
+        android:id="@+id/scrollConfig"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
-        app:layout_constraintTop_toBottomOf="@id/headerConfig">
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerConfig"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="22dp">
 
-            <!-- PESQUISA -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/bg_input_pill"
-                android:gravity="center_vertical"
-                android:paddingHorizontal="14dp"
-                android:paddingVertical="8dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_search"
-                    android:contentDescription="@string/desc_pesquisa" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/label_pesquisa"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- NOME -->
+            <!-- Nome -->
             <TextView
-                android:id="@+id/labelNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_nome"
-                android:textColor="#000000"
+                android:text="Nome"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="16dp">
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_input">
+
                 <EditText
                     android:id="@+id/editNome"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/bg_input_pill"
-                    android:paddingHorizontal="16dp"
-                    android:text="@string/nome_usuario"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/iconEditNome"
+                    android:background="@android:color/transparent"
+                    android:hint="Digite seu nome"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:text="João Bobo"
                     android:textColor="#444444"
-                    android:importantForAutofill="no"
-                    android:inputType="textPersonName"
-                    android:hint="@string/hint_nome"
-                    android:labelFor="@id/labelNome" />
+                    android:textColorHint="#9E9E9E" />
+
                 <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:id="@+id/iconEditNome"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="4dp"
-                    android:padding="10dp"
+                    android:layout_marginEnd="16dp"
                     android:src="@android:drawable/ic_menu_edit"
-                    android:contentDescription="@string/desc_editar_campo" />
+                    app:tint="@color/black" />
+
             </RelativeLayout>
 
-            <!-- USUÁRIO -->
+            <!-- Usuário -->
             <TextView
-                android:id="@+id/labelUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_usuario"
-                android:textColor="#000000"
+                android:text="Usuário"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="16dp">
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_input">
+
                 <EditText
                     android:id="@+id/editUsuario"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:background="@drawable/bg_input_pill"
-                    android:paddingHorizontal="16dp"
-                    android:text="@string/usuario_exemplo"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/iconEditUsuario"
+                    android:background="@android:color/transparent"
+                    android:hint="Digite seu usuário"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:text="Joãobobo69420"
                     android:textColor="#444444"
-                    android:importantForAutofill="no"
-                    android:inputType="text"
-                    android:hint="@string/hint_usuario"
-                    android:labelFor="@id/labelUsuario" />
+                    android:textColorHint="#9E9E9E" />
+
                 <ImageView
+                    android:id="@+id/iconEditUsuario"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:tint="@color/black" />
+
+            </RelativeLayout>
+
+            <!-- Bio -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bio"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_input">
+
+                <EditText
+                    android:id="@+id/editBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/iconEditBio"
+                    android:background="@android:color/transparent"
+                    android:gravity="top"
+                    android:hint="Digite sua bio"
+                    android:inputType="textMultiLine"
+                    android:padding="16dp"
+                    android:text="Eu sou um cara que lê muitas coisas legais e adoro jogar Elden Ring. Sou mecânico de carro e moro em Parnamirim - RN."
+                    android:textColor="#444444"
+                    android:textColorHint="#9E9E9E" />
+
+                <ImageView
+                    android:id="@+id/iconEditBio"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:tint="@color/black" />
+
+            </RelativeLayout>
+
+            <!-- Senha atual -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senha atual"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/layoutSenhaAtual"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="28dp">
+
+                <EditText
+                    android:id="@+id/editSenhaAtual"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input"
+                    android:hint="Digite sua senha"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="48dp"
+                    android:text="************"
+                    android:textColor="#444444"
+                    android:textColorHint="#9E9E9E" />
+
+                <ImageView
+                    android:id="@+id/iconOlhoSenhaAtual"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="4dp"
-                    android:padding="10dp"
-                    android:src="@android:drawable/ic_menu_edit"
-                    android:contentDescription="@string/desc_editar_campo" />
+                    android:clickable="true"
+                    android:contentDescription="@string/desc_mostrar_ocultar_senha"
+                    android:focusable="true"
+                    android:padding="12dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    app:tint="@color/biblio_blue" />
+
             </RelativeLayout>
 
-            <!-- BIO -->
-            <TextView
-                android:id="@+id/labelBio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_bio"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="16dp">
-                <EditText
-                    android:id="@+id/editBio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_input_rounded"
-                    android:gravity="top"
-                    android:minHeight="140dp"
-                    android:padding="16dp"
-                    android:text="@string/bio_exemplo"
-                    android:textColor="#444444"
-                    android:importantForAutofill="no"
-                    android:inputType="textMultiLine"
-                    android:hint="@string/hint_bio"
-                    android:labelFor="@id/labelBio" />
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:padding="10dp"
-                    android:src="@android:drawable/ic_menu_edit"
-                    android:contentDescription="@string/desc_editar_campo" />
-            </RelativeLayout>
-
-            <!-- SENHA ATUAL -->
-            <TextView
-                android:id="@+id/labelSenhaAtual"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_senha_atual"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <EditText
-                android:id="@+id/editSenhaAtual"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
-                android:background="@drawable/bg_input_pill"
-                android:inputType="textPassword"
-                android:paddingHorizontal="16dp"
-                android:text="@string/placeholder_senha"
-                android:textColor="#444444"
-                android:importantForAutofill="no"
-                android:labelFor="@id/labelSenhaAtual" />
-
-            <!-- BOTÕES -->
+            <!-- Redefinir senha -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnRedefinirSenha"
+                android:id="@+id/buttonRedefinirSenha"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginBottom="12dp"
-                android:text="@string/btn_redefinir_senha_config"
+                android:layout_height="60dp"
+                android:layout_marginBottom="18dp"
+                android:text="Redefinir Senha"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:backgroundTint="#6CB6B3" app:cornerRadius="15dp" />
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="12dp" />
 
+            <!-- Apagar conta -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnVoltarTelaInicial"
+                android:id="@+id/buttonApagarConta"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginBottom="12dp"
-                android:text="@string/btn_voltar_inicial"
+                android:layout_height="60dp"
+                android:layout_marginBottom="40dp"
+                android:text="Apagar Conta"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:backgroundTint="#6CB6B3" app:cornerRadius="15dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnApagarConta"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginBottom="24dp"
-                android:text="@string/btn_apagar_conta_config"
-                android:textAllCaps="false"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:backgroundTint="#D26262" app:cornerRadius="15dp" />
+                app:backgroundTint="@color/biblio_red"
+                app:cornerRadius="12dp" />
 
         </LinearLayout>
+
     </ScrollView>
-
-    <!-- BOTTOM NAVIGATION FIXA NO RODAPÉ -->
-    <LinearLayout
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#FFFFFF"
-        android:elevation="12dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:id="@+id/navHome"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_view"
-            android:contentDescription="@string/nav_home_desc" />
-
-        <ImageView
-            android:id="@+id/navCarrinho"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_add"
-            android:contentDescription="@string/nav_carrinho_desc" />
-
-        <ImageView
-            android:id="@+id/navBusca"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_search"
-            android:contentDescription="@string/nav_busca_desc" />
-
-        <ImageView
-            android:id="@+id/navFavoritos"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_agenda"
-            android:contentDescription="@string/nav_favoritos_desc" />
-
-        <ImageView
-            android:id="@+id/navLista"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_sort_by_size"
-            android:contentDescription="@string/nav_lista_desc" />
-
-        <ImageView
-            android:id="@+id/navUsuario"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="18dp"
-            android:src="@android:drawable/ic_menu_myplaces"
-            android:contentDescription="@string/nav_perfil_desc" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

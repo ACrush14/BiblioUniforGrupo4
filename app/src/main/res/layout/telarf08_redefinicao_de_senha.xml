@@ -108,9 +108,10 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_input"
                 android:hint="Nova senha"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:paddingHorizontal="20dp"
-                android:paddingEnd="50dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="48dp"
                 android:textColor="@color/black"
                 android:textColorHint="#9E9E9E" />
 
@@ -120,11 +121,13 @@
                 android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:padding="12dp"
-                android:src="@android:drawable/ic_menu_view"
+                android:layout_marginEnd="4dp"
+                android:clickable="true"
                 android:contentDescription="@string/desc_mostrar_ocultar_senha"
-                app:tint="#1B3434" />
+                android:focusable="true"
+                android:padding="10dp"
+                android:src="@android:drawable/ic_menu_view"
+                app:tint="@color/biblio_blue" />
         </RelativeLayout>
 
         <!-- Campo obrigatório -->
@@ -157,9 +160,10 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/bg_input"
                 android:hint="Confirme a senha"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:paddingHorizontal="20dp"
-                android:paddingEnd="50dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="48dp"
                 android:textColor="@color/black"
                 android:textColorHint="#9E9E9E" />
 
@@ -169,11 +173,13 @@
                 android:layout_height="48dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:padding="12dp"
-                android:src="@android:drawable/ic_menu_view"
+                android:layout_marginEnd="4dp"
+                android:clickable="true"
                 android:contentDescription="@string/desc_mostrar_ocultar_senha"
-                app:tint="#1B3434" />
+                android:focusable="true"
+                android:padding="10dp"
+                android:src="@android:drawable/ic_menu_view"
+                app:tint="@color/biblio_blue" />
         </RelativeLayout>
 
         <!-- Regras -->

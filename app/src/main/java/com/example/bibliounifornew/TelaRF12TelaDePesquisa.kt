@@ -69,7 +69,7 @@ class TelaRF12TelaDePesquisa : AppCompatActivity() {
 
     private fun mostrarPopupFiltro() {
         val dialog = BottomSheetDialog(this)
-        val view = layoutInflater.inflate(R.layout.layout_filtro_pesquisa, null)
+        val view = layoutInflater.inflate(R.layout.popup_filtro_pesquisa, null)
         dialog.setContentView(view)
 
         view.findViewById<MaterialButton>(R.id.btnSalvarFiltro).setOnClickListener {

@@ -8,7 +8,7 @@
 
     <!-- HEADER -->
     <LinearLayout
-        android:id="@+id/headerLivroAcoes"
+        android:id="@+id/headerAudio"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/biblio_detalhes"
@@ -28,7 +28,7 @@
 
         <!-- CAPA -->
         <ImageView
-            android:id="@+id/imageLivroAcoes"
+            android:id="@+id/imageLivroAudio"
             android:layout_width="105dp"
             android:layout_height="150dp"
             android:layout_marginStart="-70dp"
@@ -44,7 +44,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textTituloLivroAcoes"
+                android:id="@+id/textTituloAudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="O Alienista"
@@ -53,7 +53,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textAutorLivroAcoes"
+                android:id="@+id/textAutorAudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -63,11 +63,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textCategoriaLivroAcoes"
+                android:id="@+id/textInfoAudio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Ficção Psicológica"
+                android:text="Versão Narrada (Audiobook)"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -81,113 +81,70 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/headerLivroAcoes"
+        app:layout_constraintTop_toBottomOf="@id/headerAudio"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="24dp">
 
-            <!-- BOTÃO -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalhes do Audiobook"
+                android:textColor="@color/biblio_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Duração: 03h 45min\n• Narrador: João da Silva\n• Idioma: Português (Brasil)\n• Qualidade: 192kbps"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- BOTÕES -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonAlugarLivro"
+                android:id="@+id/buttonSpotify"
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:layout_marginBottom="12dp"
-                android:text="Alugar"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:text="Abrir Spotify"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="2dp"
-                app:strokeColor="@color/biblio_dark"
-                app:strokeWidth="1dp" />
+                app:cornerRadius="8dp" />
 
-            <!-- BOTÃO -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonProcurarLivro"
+                android:id="@+id/buttonMusicPlayer"
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:layout_marginBottom="12dp"
-                android:text="Procurar"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:text="Abrir Player de Música"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="2dp"
-                app:strokeColor="@color/biblio_dark"
-                app:strokeWidth="1dp" />
+                app:cornerRadius="8dp" />
 
-            <!-- BOTÃO -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonAbrirPdfLivro"
+                android:id="@+id/buttonOuvirAgora"
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:layout_marginBottom="12dp"
-                android:text="Abrir PDF"
+                android:layout_height="60dp"
+                android:text="Ouvir agora"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="2dp"
-                app:strokeColor="@color/biblio_dark"
-                app:strokeWidth="1dp" />
-
-            <!-- BOTÃO -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonAbrirAudioLivro"
-                android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:layout_marginBottom="12dp"
-                android:text="Abrir Audiobook"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="2dp"
-                app:strokeColor="@color/biblio_dark"
-                app:strokeWidth="1dp" />
-
-            <!-- BOTÃO -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonReservarLivro"
-                android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:layout_marginBottom="12dp"
-                android:text="Reservar"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="2dp"
-                app:strokeColor="@color/biblio_dark"
-                app:strokeWidth="1dp" />
-
-            <!-- BOTÃO -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonSetorLivro"
-                android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:text="Setor Localizado"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="2dp"
-                app:strokeColor="@color/biblio_dark"
-                app:strokeWidth="1dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="120dp" />
+                app:backgroundTint="@color/biblio_dark"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
 

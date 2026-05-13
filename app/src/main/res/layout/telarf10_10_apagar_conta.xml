@@ -1,61 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@drawable/bg_popup">
+    android:padding="28dp"
+    android:background="@android:color/white">
 
-    <!-- Title -->
+    <!-- TÍTULO -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textTituloApagarConta"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apagar_conta_titulo"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#6EC1C3"
-        android:layout_gravity="center"/>
+        android:gravity="center"
+        android:text="Apagar conta?"
+        android:textColor="@color/biblio_red"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-    <!-- Subtitle -->
+    <!-- DESCRIÇÃO -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textDescricaoApagarConta"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apagar_conta_subtitulo"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="Essa ação não poderá ser desfeita.\nDigite sua senha atual:"
+        android:textColor="@color/biblio_red"
         android:textSize="16sp"
-        android:textColor="#6EC1C3"
-        android:layout_gravity="center"
-        android:layout_marginTop="4dp"/>
+        android:textStyle="bold" />
 
-    <!-- Error Message -->
+    <!-- ERRO -->
     <TextView
-        android:id="@+id/textErroPopup"
+        android:id="@+id/textErroSenhaPopup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/apagar_conta_erro"
-        android:textColor="#E53935"
-        android:visibility="gone"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="18dp"
+        android:text="Digite sua senha atual!"
+        android:textColor="@color/biblio_red"
+        android:textSize="13sp"
+        android:textStyle="bold" />
 
-    <!-- Password Input -->
+    <!-- INPUT SENHA -->
     <RelativeLayout
+        android:id="@+id/layoutSenhaPopup"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="6dp">
 
         <EditText
             android:id="@+id/editSenhaPopup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_input_pill"
+            android:background="@drawable/bg_input"
+            android:hint="************"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
             android:paddingStart="16dp"
             android:paddingEnd="48dp"
-            android:hint="@string/hint_sua_senha"
-            android:inputType="textPassword"
-            android:importantForAutofill="no"/>
+            android:textColor="#444444"
+            android:textColorHint="#777777" />
 
         <ImageView
-            android:id="@+id/iconOlho"
+            android:id="@+id/iconOlhoSenhaPopup"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
@@ -64,40 +72,25 @@
             android:clickable="true"
             android:contentDescription="@string/desc_mostrar_ocultar_senha"
             android:focusable="true"
-            android:padding="10dp"
-            android:src="@android:drawable/ic_menu_view" />
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_view"
+            app:tint="@color/biblio_blue" />
+
     </RelativeLayout>
 
-    <!-- Buttons -->
-    <LinearLayout
+    <!-- BOTÃO -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonConfirmarApagarConta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp">
-
-        <Button
-            android:id="@+id/btnVoltarPopup"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="55dp"
-            android:text="@string/voltar"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/bg_input_pill"
-            android:backgroundTint="#6EC1C3"
-            android:textAllCaps="false"/>
-
-        <Space android:layout_width="12dp" android:layout_height="1dp"/>
-
-        <Button
-            android:id="@+id/btnConfirmarPopup"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="55dp"
-            android:text="@string/btn_confirmar"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/bg_input_pill"
-            android:backgroundTint="#6EC1C3"
-            android:textAllCaps="false"/>
-    </LinearLayout>
+        android:layout_height="58dp"
+        android:layout_marginTop="22dp"
+        android:text="Confirmar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/biblio_red"
+        app:cornerRadius="10dp"
+        app:elevation="4dp" />
 
 </LinearLayout>
