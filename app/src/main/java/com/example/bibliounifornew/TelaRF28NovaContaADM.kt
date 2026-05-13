@@ -1,4 +1,14 @@
-package com.example.bibliounifornew 
+package com.example.bibliounifornew
+
+import android.os.Bundle
+import android.text.InputType
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 
 class TelaRF28NovaContaADM : AppCompatActivity() {
 
@@ -6,19 +16,45 @@ class TelaRF28NovaContaADM : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.telarf28_nova_conta_adm)
 
-        val edtNomeCompleto = findViewById<EditText>(R.id.edtNomeCompleto)
-        val edtNomeUsuario = findViewById<EditText>(R.id.edtNomeUsuario)
-        val edtEmail = findViewById<EditText>(R.id.edtEmail)
-        val edtCredencial = findViewById<EditText>(R.id.edtCredencial)
-        val edtSenha = findViewById<EditText>(R.id.edtSenha)
-        val edtConfirmaSenha = findViewById<EditText>(R.id.edtConfirmaSenha)
+        val edtNomeCompleto = findViewById<EditText>(R.id.editNomeCompletoAdm)
+        val edtNomeUsuario = findViewById<EditText>(R.id.editNomeUsuarioAdm)
+        val edtEmail = findViewById<EditText>(R.id.editEmailAdmCadastro)
+        val edtCredencial = findViewById<EditText>(R.id.editCredencialAdmCadastro)
+        val edtSenha = findViewById<EditText>(R.id.editSenhaAdmCadastro)
+        val edtConfirmaSenha = findViewById<EditText>(R.id.editConfirmarSenhaAdm)
 
-        val txtErroEmail = findViewById<TextView>(R.id.txtErroEmail)
-        val txtErroCredencial = findViewById<TextView>(R.id.txtErroCredencial)
-        val txtErroSenha = findViewById<TextView>(R.id.txtErroSenha)
+        val txtErroEmail = findViewById<TextView>(R.id.textErroEmailAdmCadastro)
+        val txtErroCredencial = findViewById<TextView>(R.id.textErroCredencialAdm)
+        val txtErroSenha = findViewById<TextView>(R.id.textRegrasSenhaAdm)
 
-        val btnCriar = findViewById<Button>(R.id.btnCriar)
-        val txtEntreAqui = findViewById<TextView>(R.id.txtEntreAqui)
+        val btnCriar = findViewById<Button>(R.id.buttonCriarContaAdm)
+        val txtEntreAqui = findViewById<TextView>(R.id.textEntreAquiAdm)
+
+        // MOSTRAR/OCULTAR SENHA
+        val iconOlhoSenha = findViewById<ImageView>(R.id.iconOlhoSenhaAdmCadastro)
+        val iconOlhoConfirma = findViewById<ImageView>(R.id.iconOlhoConfirmarSenhaAdm)
+
+        var senhaVisivel = false
+        iconOlhoSenha.setOnClickListener {
+            senhaVisivel = !senhaVisivel
+            if (senhaVisivel) {
+                edtSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                edtSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            edtSenha.setSelection(edtSenha.text.length)
+        }
+
+        var confirmaVisivel = false
+        iconOlhoConfirma.setOnClickListener {
+            confirmaVisivel = !confirmaVisivel
+            if (confirmaVisivel) {
+                edtConfirmaSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                edtConfirmaSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            edtConfirmaSenha.setSelection(edtConfirmaSenha.text.length)
+        }
 
         btnCriar.setOnClickListener {
             txtErroEmail.visibility = View.GONE

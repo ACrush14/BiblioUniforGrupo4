@@ -63,16 +63,34 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editNovaSenha"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input_pill"
-                android:hint="@string/hint_nova_senha"
-                android:inputType="textPassword"
-                android:paddingHorizontal="20dp"
-                android:importantForAutofill="no" />
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/editNovaSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_pill"
+                    android:hint="@string/hint_nova_senha"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="20dp"
+                    android:paddingEnd="50dp" />
+
+                <ImageView
+                    android:id="@+id/iconOlhoNovaSenha"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:padding="12dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    android:contentDescription="@string/desc_mostrar_ocultar_senha"
+                    app:tint="#1B3434" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/textErroSenha"
@@ -94,16 +112,34 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editConfirmarSenha"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input_pill"
-                android:hint="@string/hint_confirmar_senha"
-                android:inputType="textPassword"
-                android:paddingHorizontal="20dp"
-                android:importantForAutofill="no" />
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/editConfirmarSenha"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_pill"
+                    android:hint="@string/hint_confirmar_senha"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="20dp"
+                    android:paddingEnd="50dp" />
+
+                <ImageView
+                    android:id="@+id/iconOlhoConfirmarSenha"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:padding="12dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    android:contentDescription="@string/desc_mostrar_ocultar_senha"
+                    app:tint="#1B3434" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/textErroConfirmar"

@@ -2,11 +2,13 @@ package com.example.bibliounifor
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -33,17 +35,43 @@ class TelaRF05CadastroNovoUsuario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.telarf05_cadastrar_novo_usuario)
+        setContentView(R.layout.telarf04_cadastrar_novo_usuario)
 
         etNome = findViewById(R.id.editTextNome)
         etUsuario = findViewById(R.id.editTextUsuario)
-        etEmail = findViewById(R.id.editTextTextEmail)
-        etSenha = findViewById(R.id.editTextTextSenha)
-        etConfirmaSenha = findViewById(R.id.editTextTextConfirmaSenha)
+        etEmail = findViewById(R.id.editTextEmail)
+        etSenha = findViewById(R.id.editTextSenha)
+        etConfirmaSenha = findViewById(R.id.editTextConfirmaSenha)
         tvErroEmail = findViewById(R.id.tvErroEmail)
         tvErroSenha = findViewById(R.id.tvErroSenha)
-        btnEntreAqui = findViewById(R.id.EntreAqui)
-        btnCriar = findViewById(R.id.Criar)
+        btnEntreAqui = findViewById(R.id.textEntreAqui)
+        btnCriar = findViewById(R.id.btnCriar)
+
+        // MOSTRAR/OCULTAR SENHA
+        val iconOlhoSenha = findViewById<ImageView>(R.id.iconOlhoSenha)
+        val iconOlhoConfirma = findViewById<ImageView>(R.id.iconOlhoConfirmarSenha)
+
+        var senhaVisivel = false
+        iconOlhoSenha.setOnClickListener {
+            senhaVisivel = !senhaVisivel
+            if (senhaVisivel) {
+                etSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                etSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            etSenha.setSelection(etSenha.text.length)
+        }
+
+        var confirmaVisivel = false
+        iconOlhoConfirma.setOnClickListener {
+            confirmaVisivel = !confirmaVisivel
+            if (confirmaVisivel) {
+                etConfirmaSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            } else {
+                etConfirmaSenha.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            }
+            etConfirmaSenha.setSelection(etConfirmaSenha.text.length)
+        }
 
         btnCriar.setOnClickListener {
             validarECadastrar()
