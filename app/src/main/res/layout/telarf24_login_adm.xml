@@ -1,168 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F7"
+    android:background="@color/biblio_bg"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Header -->
+        <!-- Fundo decorativo -->
         <View
-            android:id="@+id/headerBackground"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@color/biblio_cyan"
+            android:layout_marginStart="-100dp"
+            android:layout_marginTop="-100dp"
+            android:alpha="0.3"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/biblio_detalhes"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/headerContent"
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageLogoAdm"
+            android:layout_width="450dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="45dp"
+            android:contentDescription="Logo"
+            android:src="@drawable/unifor_marca"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/textTituloAdm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@id/headerBackground"
-            app:layout_constraintEnd_toEndOf="@id/headerBackground"
-            app:layout_constraintStart_toStartOf="@id/headerBackground"
-            app:layout_constraintTop_toTopOf="@id/headerBackground">
+            android:layout_marginTop="10dp"
+            android:text="Acesse sua Conta ADM"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imageLogoAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/circle_white_alpha"
-                android:padding="10dp"
-                android:src="@drawable/ic_launcher_foreground" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Acesse sua Conta"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Main Content -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Bem vindo -->
+        <TextView
+            android:id="@+id/textBemVindoAdm"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            app:layout_constraintTop_toBottomOf="@id/headerBackground">
+            android:layout_marginTop="50dp"
+            android:text="Bem vindo de novo!"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/textTituloAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Erro -->
+        <TextView
+            android:id="@+id/textErroAdm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Email ou senhas incorreto&#10;Preencha todos os campos"
+            android:textColor="@color/biblio_red"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/textBemVindoAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/editEmailAdm"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_input"
+            android:hint="Digite seu e-mail"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9E9E9E"
+            app:layout_constraintTop_toBottomOf="@id/textErroAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Senha -->
+        <EditText
+            android:id="@+id/editSenhaAdm"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_input"
+            android:hint="Digite sua senha"
+            android:inputType="textPassword"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9E9E9E"
+            app:layout_constraintTop_toBottomOf="@id/editEmailAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Credencial -->
+        <EditText
+            android:id="@+id/editCredencialAdm"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_input"
+            android:hint="Digite sua credencial"
+            android:inputType="text"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9E9E9E"
+            app:layout_constraintTop_toBottomOf="@id/editSenhaAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Esqueceu senha -->
+        <TextView
+            android:id="@+id/textEsqueceuSenhaAdm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Esqueceu a Senha?"
+            android:textColor="@color/biblio_detalhes"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/editCredencialAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botão -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEntrarAdm"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="18dp"
+            android:text="Entrar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/biblio_blue"
+            app:cornerRadius="12dp"
+            app:elevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/textEsqueceuSenhaAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Criar conta -->
+        <LinearLayout
+            android:id="@+id/layoutCriarContaAdm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/buttonEntrarAdm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Bem vindo de novo!"
-                android:textColor="#1E2A2A"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:text="Não tem uma conta? "
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tvErrorMessage"
+                android:id="@+id/textCriarContaAdm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Email, senha ou credencial incorretos"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="14sp"
-                android:visibility="gone" />
-
-            <EditText
-                android:id="@+id/etEmail"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:background="@drawable/bg_rounded_input"
-                android:hint="Digite seu e-mail"
-                android:inputType="textEmailAddress"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
-
-            <EditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_rounded_input"
-                android:hint="Digite sua senha"
-                android:inputType="textPassword"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
-
-            <EditText
-                android:id="@+id/etCredential"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_rounded_input"
-                android:hint="Digite sua credencial"
-                android:inputType="text"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
-
-            <TextView
-                android:id="@+id/btnForgotPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:padding="8dp"
-                android:text="Esqueceu a Senha?"
-                android:textColor="@color/biblio_cyan" />
-
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/biblio_cyan"
-                android:text="Entrar"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:cornerRadius="12dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não tem uma conta? "
-                    android:textColor="#415E5E" />
-
-                <TextView
-                    android:id="@+id/btnCreateAccount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:text="Crie aqui"
-                    android:textColor="@color/biblio_cyan"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_marginTop="24dp"
-                android:padding="8dp"
-                android:text="← Voltar"
-                android:textColor="@color/biblio_cyan" />
+                android:text="Crie aqui"
+                android:textColor="@color/biblio_detalhes"
+                android:textSize="15sp" />
 
         </LinearLayout>
+
+        <!-- Espaço final -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@id/layoutCriarContaAdm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
