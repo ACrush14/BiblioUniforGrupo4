@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="28dp">
 
+    <!-- Título -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Conta criada com\nsucesso!"
-        android:textColor="#87DEDE"
-        android:textSize="22sp"
+        android:textColor="@color/biblio_blue"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
+    <!-- Subtítulo -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="22dp"
         android:gravity="center"
         android:text="Verifique sua conta em seu\ne-mail e faça login."
-        android:textColor="#415E5E"
-        android:textSize="18sp" />
+        android:textColor="#5F6368"
+        android:textSize="16sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <!-- Botão -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRetorneLogin"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/bg_button_rounded"
-        android:backgroundTint="#87DEDE"
+        android:layout_height="55dp"
+        android:layout_marginTop="28dp"
         android:text="Retorne ao Login"
         android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/biblio_blue"
+        app:cornerRadius="12dp"
+        app:elevation="4dp" />
 
 </LinearLayout>

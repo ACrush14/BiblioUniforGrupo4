@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="@color/biblio_bg">
 
+    <!-- Fundo decorativo -->
     <View
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -12,88 +15,111 @@
         android:layout_marginTop="-100dp"
         android:alpha="0.3"
         android:background="@drawable/bg_circle"
-        android:backgroundTint="#87DEDE"
+        android:backgroundTint="@color/biblio_detalhes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Logo -->
     <ImageView
-        android:id="@+id/imageIcon3"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:contentDescription="Ícone do aplicativo"
-        android:src="@mipmap/ic_launcher"
-        app:layout_constraintBottom_toTopOf="@+id/linearContent"
+        android:id="@+id/imageLogoRecSenha"
+        android:layout_width="450dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="45dp"
+        android:contentDescription="Logo Unifor"
+        android:src="@drawable/unifor_marca"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearContent"
-        android:layout_width="match_parent"
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textTituloRecSenha"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6">
+        android:layout_marginTop="10dp"
+        android:text="Acesse sua Conta"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageLogoRecSenha" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Redefinir Senha"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+    <!-- Subtítulo -->
+    <TextView
+        android:id="@+id/textSubtituloRecSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Redefinir Senha"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTituloRecSenha" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="8dp"
-            android:text="Insira abaixo o e-mail vinculado à sua conta." />
+    <!-- Erro -->
+    <TextView
+        android:id="@+id/textErroEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:text="E-mail não cadastrado"
+        android:textColor="@color/biblio_red"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textSubtituloRecSenha" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+    <!-- Campo Email -->
+    <EditText
+        android:id="@+id/editTextEmailRec"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_input"
+        android:hint="Digite seu e-mail"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#9E9E9E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textErroEmail" />
 
-        <TextView
-            android:id="@+id/textErroEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="E-mail não cadastrado"
-            android:textColor="#F44336"
-            android:textSize="14sp"
-            android:visibility="invisible"
-            android:layout_marginBottom="4dp" />
+    <!-- Botão -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonEnviarCOD"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Enviar Código"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/biblio_blue"
+        app:cornerRadius="12dp"
+        app:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextEmailRec" />
 
-        <EditText
-            android:id="@+id/editTextEmaiREC"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@drawable/bg_input_rounded"
-            android:hint="Digite seu e-mail"
-            android:paddingHorizontal="16dp"
-            android:inputType="textEmailAddress" />
+    <!-- Voltar -->
+    <TextView
+        android:id="@+id/buttonVoltarLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Retornar à tela de login"
+        android:textColor="@color/biblio_detalhes"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonEnviarCOD" />
 
-        <Button
-            android:id="@+id/buttonEnviarCOD"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/biblio_cyan"
-            android:text="Enviar Código"
-            android:textAllCaps="false"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/buttonVoltarLog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="Retornar à tela de login"
-            android:textAllCaps="false"
-            android:textColor="@color/biblio_cyan" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
