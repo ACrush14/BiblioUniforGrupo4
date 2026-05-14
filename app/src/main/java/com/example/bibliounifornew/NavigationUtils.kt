@@ -1,4 +1,8 @@
-package com.example.bibliounifornew 
+package com.example.bibliounifornew
+
+import android.app.Activity
+import android.content.Intent
+import android.widget.ImageView
 
 object NavigationUtils {
 
@@ -23,30 +27,23 @@ object NavigationUtils {
                 activity.startActivity(Intent(activity, TelaRF12TelaDePesquisa::class.java))
             }
         }
-        // 4. Coração -> RF17
-        activity.findViewById<ImageView>(R.id.navFavorites)?.setOnClickListener {
-            activity.startActivity(Intent(activity, TelaRF17ListaDesejosActivity::class.java))
-        }
-        // 5. Livro -> RF19
-        activity.findViewById<ImageView>(R.id.navRentals)?.setOnClickListener {
-            activity.startActivity(Intent(activity, TelaRF19::class.java))
-        }
-        // 6. Pessoa -> RF18
-        activity.findViewById<ImageView>(R.id.navFriends)?.setOnClickListener {
-            activity.startActivity(Intent(activity, TelaRF18::class.java))
-        activity.findViewById<ImageView>(R.id.navDesejos)?.setOnClickListener {
+        // 4. Coração/Desejos -> RF17
+        val navDesejos = activity.findViewById<ImageView>(R.id.navDesejos) ?: activity.findViewById<ImageView>(R.id.navFavorites)
+        navDesejos?.setOnClickListener {
             if (activity !is TelaRF17ListaDesejosActivity) {
                 activity.startActivity(Intent(activity, TelaRF17ListaDesejosActivity::class.java))
             }
         }
         // 5. Livro -> RF19
-        activity.findViewById<ImageView>(R.id.navAluguel)?.setOnClickListener {
+        val navAluguel = activity.findViewById<ImageView>(R.id.navAluguel) ?: activity.findViewById<ImageView>(R.id.navRentals)
+        navAluguel?.setOnClickListener {
             if (activity !is TelaRF19) {
                 activity.startActivity(Intent(activity, TelaRF19::class.java))
             }
         }
         // 6. Pessoa -> RF18
-        activity.findViewById<ImageView>(R.id.navAmigos)?.setOnClickListener {
+        val navAmigos = activity.findViewById<ImageView>(R.id.navAmigos) ?: activity.findViewById<ImageView>(R.id.navFriends)
+        navAmigos?.setOnClickListener {
             if (activity !is TelaRF18) {
                 activity.startActivity(Intent(activity, TelaRF18::class.java))
             }
@@ -70,7 +67,6 @@ object NavigationUtils {
 
     // --- NAVEGAÇÃO DO ADMINISTRADOR (RF30 a RF42) ---
 
-    // Versão unificada que muitas telas chamam
     fun setupAdminNavigation(activity: Activity) {
         setupAdminBottomNavigation(activity)
         setupAdminTopBar(activity)
@@ -117,7 +113,6 @@ object NavigationUtils {
     }
 
     fun setupAdminTopBar(activity: Activity) {
-        // Engrenagem no Topo Esquerdo -> Config ADM (RF40)
         activity.findViewById<ImageView>(R.id.btnConfigAdm)?.setOnClickListener {
             if (activity !is TelaRF40ConfigADM) {
                 activity.startActivity(Intent(activity, TelaRF40ConfigADM::class.java))
@@ -143,7 +138,7 @@ object NavigationUtils {
             is TelaRF33VerificarMidia, is TelaRF33Solicitacoes -> navSol?.setColorFilter(activeColor)
             is TelaRF42VerificarMidia, is TelaRF34LivrosCRUD, is TelaRF35CadastroDeLivros,
             is TelaRF35_3InfosAdicionais, is TelaRF35_4Versoes, is TelaRF38ListaAlugueisADM,
-            is TelaRF39InfoLivroADM -> navMidia?.setColorFilter(activeColor)
+            is TelaRF39InfoLivroADM, is TelaAlugadosUsuarioADM -> navMidia?.setColorFilter(activeColor)
             is TelaRF31GerenciamentoDeUsuarios, is TelaRF32UsuariosParaADM,
             is TelaRF37ConfirmarCadastroADM -> navUser?.setColorFilter(activeColor)
         }

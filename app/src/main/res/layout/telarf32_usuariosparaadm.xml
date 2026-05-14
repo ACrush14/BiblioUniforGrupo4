@@ -2,137 +2,174 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F7">
+    android:background="@color/biblio_bg"
+    tools:context=".TelaDetalhesUsuarioADM">
 
-    <!-- HEADER PADRÃO ADM -->
-    <LinearLayout
-        android:id="@+id/headerPadraoAdm"
+    <!-- HEADER -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerDetalhesUsuario"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#6EC1C3"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="16dp"
+        android:layout_height="240dp"
+        android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/btnConfigAdm"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_manage"
-            android:contentDescription="Configurações ADM"
-            app:tint="#FFFFFF" />
+        <!-- CÍRCULOS -->
+        <View
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="-90dp"
+            android:layout_marginTop="-90dp"
+            android:alpha="0.16"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- FOTO -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFotoUsuario"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="41dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_placeholder" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- NOME -->
         <TextView
-            android:layout_width="0dp"
+            android:id="@+id/textNomeUsuario"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="16dp"
-            android:text="Detalhes do Usuário"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:text="Ronaldo Alves"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardFotoUsuario"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp" />
 
+        <!-- EMAIL -->
+        <TextView
+            android:id="@+id/textEmailUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="r.alves.profissional@email.com"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/textNomeUsuario"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- CONTEÚDO -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/headerPadraoAdm"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavContainer">
+        app:layout_constraintTop_toBottomOf="@id/headerDetalhesUsuario"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="18dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="40dp">
 
-            <!-- HEADER PERFIL -->
-            <LinearLayout
+            <!-- BOTÃO 1 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSolicitacoes"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="#87DEDE">
+                android:layout_height="62dp"
+                android:layout_marginBottom="22dp"
+                android:text="Solicitações"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="10dp"
+                app:elevation="3dp" />
 
-                <ImageView
-                    android:id="@+id/imgUsuario"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:background="@drawable/bg_circle"
-                    android:padding="8dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:contentDescription="Foto do Usuário" />
-
-                <TextView
-                    android:id="@+id/tvNomeUsuario"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="João Bobo"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
-
-            <!-- BOTÕES -->
-            <LinearLayout
+            <!-- BOTÃO 2 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAlugados"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:layout_height="62dp"
+                android:layout_marginBottom="22dp"
+                android:text="Alugados"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="10dp"
+                app:elevation="3dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSolicitacoes"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="Solicitações"
-                    app:backgroundTint="#6EC1C3"
-                    app:cornerRadius="12dp"
-                    android:textAllCaps="false" />
+            <!-- BOTÃO 3 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAtrasos"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginBottom="22dp"
+                android:text="Atrasos de alugueis"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="10dp"
+                app:elevation="3dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAlugados"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="Alugados"
-                    app:backgroundTint="#6EC1C3"
-                    app:cornerRadius="12dp"
-                    android:textAllCaps="false" />
+            <!-- BOTÃO 4 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPermissao"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginBottom="30dp"
+                android:text="Mudar permissão de usuário"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="10dp"
+                app:elevation="3dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnAtrasos"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:layout_marginBottom="24dp"
-                    android:text="Atrasos de aluguéis"
-                    app:backgroundTint="#6EC1C3"
-                    app:cornerRadius="12dp"
-                    android:textAllCaps="false" />
+            <!-- BOTÃO EXCLUIR -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExcluirConta"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:text="Excluir conta"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:backgroundTint="#D9534F"
+                app:cornerRadius="10dp"
+                app:elevation="3dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnExcluirConta"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:text="Excluir conta"
-                    app:backgroundTint="#E53935"
-                    app:cornerRadius="12dp"
-                    android:textAllCaps="false" />
-
-            </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 
-    <!-- BARRA ADM PADRONIZADA -->
-    <FrameLayout
-        android:id="@+id/bottomNavContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <include layout="@layout/bottom_navigation_adm" />
-    </FrameLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

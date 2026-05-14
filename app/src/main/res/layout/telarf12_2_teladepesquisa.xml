@@ -89,39 +89,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonBuscarTituloResultado"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:text="Procurar por Título"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/biblio_detalhes"
-                    app:cornerRadius="2dp"
-                    app:strokeColor="@color/black"
-                    app:strokeWidth="1dp" />
-
                 <Space
                     android:layout_width="6dp"
                     android:layout_height="wrap_content" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonBuscarISBNResultado"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:text="Procurar por ISBN"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/biblio_detalhes"
-                    app:cornerRadius="2dp"
-                    app:strokeColor="@color/black"
-                    app:strokeWidth="1dp" />
 
             </LinearLayout>
 
