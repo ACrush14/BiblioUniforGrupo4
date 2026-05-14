@@ -1,4 +1,7 @@
-package com.example.bibliounifornew 
+package com.example.bibliounifornew
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class TelaRF42VerificarMidia : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -6,7 +9,6 @@ class TelaRF42VerificarMidia : AppCompatActivity() {
         setContentView(R.layout.telarf42_verificar_midia)
 
         // Navegação ADM
-        NavigationUtils.setupAdminTopBar(this)
-        NavigationUtils.setupAdminBottomNavigation(this)
+        NavigationUtils.setupAdminNavigation(this)
     }
 }

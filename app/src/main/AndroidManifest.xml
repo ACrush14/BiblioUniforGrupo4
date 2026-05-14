@@ -180,15 +180,11 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
-            android:name=".TelaRF335UsuarioNotificado"
+            android:name=".PopupNotificacaoBrailleConcluido"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
-            android:name=".TelaRF336BrailleConcluido"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.Dialog" />
-        <activity
-            android:name=".TelaRF337ExcluirSolicitacao"
+            android:name=".PopupConfirmarExclusaoSolicitacao"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity

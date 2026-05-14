@@ -6,42 +6,49 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER -->
-    <LinearLayout
+    <!-- PREMIUM HEADER (240dp) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerPdf"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="240dp"
         android:background="@color/biblio_detalhes"
-        android:orientation="horizontal"
-        android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- FUNDO DECORATIVO -->
+        <!-- DECORATIVE BACKGROUND -->
         <View
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_marginStart="-100dp"
             android:layout_marginTop="-100dp"
-            android:alpha="0.25"
+            android:alpha="0.16"
             android:background="@drawable/bg_circle"
-            android:backgroundTint="@color/white" />
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- CAPA -->
-        <ImageView
+        <!-- BOOK COVER (8dp rounded) -->
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageLivroPdf"
-            android:layout_width="105dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="-70dp"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="32dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/o_alienista_capa" />
+            android:src="@drawable/o_alienista_capa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize8dp" />
 
-        <!-- INFOS -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/imageLivroPdf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageLivroPdf"
+            app:layout_constraintTop_toTopOf="@id/imageLivroPdf">
 
             <TextView
                 android:id="@+id/textTituloPdf"
@@ -59,95 +66,94 @@
                 android:layout_marginTop="4dp"
                 android:text="Machado de Assis"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="17sp" />
 
             <TextView
-                android:id="@+id/textInfoPdf"
+                android:id="@+id/textBadgePdf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Versão Digital (PDF)"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_popup_rounded"
+                android:backgroundTint="#20FFFFFF"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="E-BOOK / PDF"
                 android:textColor="@color/white"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTEÚDO -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/headerPdf"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerPdf">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="32dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Detalhes do Arquivo"
-                android:textColor="@color/biblio_dark"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="Acesse a versão digital completa desta obra. Você pode ler diretamente no nosso leitor ou baixar o arquivo PDF."
+                android:textColor="#415E5E"
+                android:textSize="17sp"
+                android:layout_marginBottom="32dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="• Formato: PDF\n• Tamanho: 2.4 MB\n• Páginas: 112\n• Idioma: Português"
-                android:textColor="@color/black"
+            <!-- PILL BUTTONS (28dp radius) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLerAgora"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:text="Ler agora"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="16sp"
-                android:layout_marginBottom="32dp"/>
-
-            <!-- BOTÕES -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonGoogleDrive"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="16dp"
-                android:text="Abrir com Google Drive"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="8dp" />
+                app:cornerRadius="28dp"
+                app:elevation="0dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonLeitorPdf"
+                android:id="@+id/btnAdicionarListaPdf"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="56dp"
                 android:layout_marginBottom="16dp"
-                android:text="Abrir com leitor PDF"
+                android:text="Adicionar a Lista"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textColor="@color/biblio_blue"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="8dp" />
+                app:backgroundTint="@color/white"
+                app:strokeColor="@color/biblio_blue"
+                app:strokeWidth="2dp"
+                app:cornerRadius="28dp"
+                app:elevation="0dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonBaixarPdf"
+                android:id="@+id/btnBaixarPdf"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="56dp"
                 android:text="Baixar PDF"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/biblio_dark"
-                app:cornerRadius="8dp" />
+                app:backgroundTint="@color/biblio_detalhes"
+                app:cornerRadius="28dp"
+                app:elevation="0dp" />
 
         </LinearLayout>
-
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

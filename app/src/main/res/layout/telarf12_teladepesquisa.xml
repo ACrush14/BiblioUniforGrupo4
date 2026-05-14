@@ -7,62 +7,70 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER -->
+    <!-- PREMIUM HEADER (Standard 240dp) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerBuscar"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="240dp"
         android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- FUNDO DECORATIVO -->
+        <!-- FUNDO DECORATIVO (Alpha 0.16) -->
         <View
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginStart="-100dp"
             android:layout_marginTop="-100dp"
-            android:alpha="0.3"
+            android:alpha="0.16"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- FOTO -->
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imagePerfilBusca"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginTop="28dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/user_placeholder"
+        <!-- FOTO DE PERFIL CIRCULAR (Standard 82dp CardView) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPerfilBusca"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="41dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <!-- TEXTO -->
+            <ImageView
+                android:id="@+id/imagePerfilBusca"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_placeholder" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TÍTULOS -->
         <TextView
             android:id="@+id/textTituloBusca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="16dp"
             android:text="Vamos procurar"
             android:textColor="@color/white"
-            android:textSize="28sp"
+            android:textSize="26sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imagePerfilBusca" />
+            app:layout_constraintTop_toBottomOf="@id/cardPerfilBusca" />
 
         <TextView
             android:id="@+id/textBemVindoBusca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Bem vindo"
+            android:text="Encontre seu próximo livro"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textTituloBusca" />
@@ -81,26 +89,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="32dp">
 
-            <!-- BOTÕES -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Space
-                    android:layout_width="6dp"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <!-- INPUT -->
+            <!-- BARRA DE PESQUISA -->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="18dp"
-                android:background="@drawable/bg_input">
+                android:layout_height="56dp"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="16dp">
 
                 <EditText
                     android:id="@+id/editPesquisarLivro"
@@ -108,11 +104,10 @@
                     android:layout_height="match_parent"
                     android:layout_toStartOf="@+id/iconFiltro"
                     android:background="@android:color/transparent"
-                    android:hint="Escreva aqui..."
-                    android:paddingStart="16dp"
-                    android:paddingEnd="8dp"
+                    android:hint="Pesquise por título, autor ou gênero"
                     android:textColor="#444444"
-                    android:textColorHint="#999999" />
+                    android:textColorHint="#999999"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/iconFiltro"
@@ -120,31 +115,30 @@
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
                     android:src="@android:drawable/ic_menu_sort_by_size"
-                    app:tint="@color/black" />
+                    app:tint="@color/biblio_blue" />
 
             </RelativeLayout>
 
-            <!-- BOTÃO -->
+            <!-- BOTÃO PROCURAR (PILL STYLE - 28dp radius) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonProcurar"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="26dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
                 android:text="Procurar"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="10dp"
-                app:elevation="4dp" />
+                app:cornerRadius="28dp"
+                app:elevation="2dp" />
 
-            <!-- ESPAÇO -->
+            <!-- ESPAÇO ADICIONAL PARA FLUIDEZ -->
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="120dp" />
+                android:layout_height="80dp" />
 
         </LinearLayout>
 

@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
+    <!-- ========================================================= -->
     <!-- HEADER -->
+    <!-- ========================================================= -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/headerLivrosAdm"
+        android:id="@+id/headerVerificarMidia"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="245dp"
         android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- CÍRCULO -->
+        <!-- CÍRCULO DECORATIVO -->
         <View
             android:layout_width="220dp"
             android:layout_height="220dp"
             android:layout_marginStart="-90dp"
             android:layout_marginTop="-90dp"
-            android:alpha="0.16"
+            android:alpha="0.14"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- CÍRCULO DECORATIVO -->
+        <View
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginEnd="-60dp"
+            android:layout_marginBottom="-50dp"
+            android:alpha="0.10"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <!-- FOTO -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardFotoAdm"
-            android:layout_width="82dp"
-            android:layout_height="82dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="24dp"
-            app:cardCornerRadius="41dp"
-            app:cardElevation="4dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="38dp"
+            app:cardCornerRadius="44dp"
+            app:cardElevation="3dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -43,115 +60,318 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/user_placeholder" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- TÍTULO -->
         <TextView
-            android:id="@+id/textTituloLivros"
+            android:id="@+id/textTituloTela"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gerenciamento de Livros"
+            android:layout_marginTop="18dp"
+            android:text="Verificar Mídia"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/cardFotoAdm"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardFotoAdm" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- ========================================================= -->
     <!-- CONTEÚDO -->
+    <!-- ========================================================= -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@id/bottomNavContainer"
-        app:layout_constraintTop_toBottomOf="@id/headerLivrosAdm">
+        app:layout_constraintTop_toBottomOf="@id/headerVerificarMidia">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:paddingStart="18dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="30dp">
+
+            <!-- BOTÃO ADICIONAR -->
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCriarMidia"
+                android:id="@+id/btnAdicionarMidia"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:text="Cadastrar Novo Livro"
+                android:layout_height="56dp"
+                android:layout_marginBottom="18dp"
+                android:text="Adicionar Mídia"
                 android:textAllCaps="false"
-                app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="12dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginVertical="20dp"
-                android:background="#DDDDDD" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Último Livro Cadastrado:"
+                android:textColor="@color/white"
+                android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="#415E5E"
-                android:layout_marginBottom="12dp"/>
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="28dp"
+                app:elevation="4dp" />
 
-            <androidx.cardview.widget.CardView
+            <!-- PESQUISA -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="18dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#F0F0F0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <EditText
+                        android:id="@+id/editPesquisarMidia"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="Procurar mídia..."
+                        android:textColor="@color/black"
+                        android:textColorHint="#8A8A8A"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iconFiltro"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iconFiltro"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@android:drawable/ic_menu_sort_by_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD LIVRO -->
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="3dp">
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/o_alienista_capa"
-                        android:scaleType="centerCrop"/>
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- TOPO -->
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- CAPA -->
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="95dp"
+                            android:layout_height="140dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="2dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/o_alienista_capa" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- INFOS -->
+
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="O Alienista"
-                            android:textStyle="bold"
-                            android:textColor="#1B3434"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Machado de Assis"
-                            android:textSize="12sp"
-                            android:textColor="#415E5E"/>
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnEditarInformacoes"
-                            style="@style/Widget.MaterialComponents.Button.TextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Editar"
-                            android:textAllCaps="false"
-                            android:textColor="@color/biblio_blue" />
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <!-- TITULO -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Título:"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:text="O Senhor dos Anéis - A Sociedade do Anel"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <!-- AUTOR -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Autor: J. R. R. Tolkien"
+                                android:textColor="@color/black"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                            <!-- ISBN -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="ISBN: 8595084750"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <!-- DATA -->
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Data: 25 nov 2019"
+                                android:textColor="@color/black"
+                                android:textSize="16sp">
+
+                            </TextView>
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
+                    <!-- DISPONIBILIDADE -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="Disponível: audiobook, pdf, braille"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <!-- EXEMPLARES -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Exemplares: 10/30"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/btnDiminuir"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@android:color/transparent"
+                                android:contentDescription="@string/desc_diminuir_exemplares"
+                                android:scaleType="centerInside"
+                                android:src="@android:drawable/arrow_down_float" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="2dp"
+                                android:text="30"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageButton
+                                android:id="@+id/btnAumentar"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:background="@android:color/transparent"
+                                android:contentDescription="@string/desc_aumentar_exemplares"
+                                android:scaleType="centerInside"
+                                android:src="@android:drawable/arrow_up_float" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- BOTÃO -->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEditarInformacoes"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="24dp"
+                        android:text="Editar informações"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        app:backgroundTint="@color/biblio_blue"
+                        app:cornerRadius="28dp"
+                        app:elevation="4dp" />
+
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
+
     </ScrollView>
 
-    <!-- BARRA ADM PADRONIZADA -->
+    <!-- ========================================================= -->
+    <!-- BOTTOM NAVIGATION -->
+    <!-- ========================================================= -->
+
     <FrameLayout
         android:id="@+id/bottomNavContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
+
         <include layout="@layout/bottom_navigation_adm" />
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,62 +7,69 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER -->
+    <!-- PREMIUM HEADER STANDARD (240dp) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerPesquisaResultado"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="240dp"
         android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- FUNDO DECORATIVO -->
+        <!-- FUNDO DECORATIVO (Alpha 0.16) -->
         <View
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginStart="-100dp"
             android:layout_marginTop="-100dp"
-            android:alpha="0.3"
+            android:alpha="0.16"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- FOTO -->
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imagePerfilPesquisaResultado"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_marginTop="28dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/user_placeholder"
+        <!-- FOTO PERFIL CIRCULAR (82dp CardView) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPerfil"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="41dp"
+            app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <!-- TEXTO -->
+            <ImageView
+                android:id="@+id/imagePerfilPesquisaResultado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_placeholder" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- TÍTULOS -->
         <TextView
             android:id="@+id/textTituloPesquisaResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="16dp"
             android:text="Vamos procurar"
             android:textColor="@color/white"
-            android:textSize="28sp"
+            android:textSize="26sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imagePerfilPesquisaResultado" />
+            app:layout_constraintTop_toBottomOf="@id/cardPerfil" />
 
         <TextView
             android:id="@+id/textBemVindoPesquisaResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Bem vindo"
+            android:text="Bem-vindo ao acervo"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textTituloPesquisaResultado" />
@@ -81,25 +88,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="16dp">
 
-            <!-- BOTÕES -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Space
-                    android:layout_width="6dp"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <!-- INPUT -->
+            <!-- INPUT PESQUISA -->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="18dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/bg_input">
 
                 <EditText
@@ -108,11 +104,12 @@
                     android:layout_height="match_parent"
                     android:layout_toStartOf="@+id/iconFiltroResultado"
                     android:background="@android:color/transparent"
-                    android:hint="O alienista"
-                    android:paddingStart="16dp"
+                    android:hint="Pesquise por título ou autor"
+                    android:paddingStart="20dp"
                     android:paddingEnd="8dp"
                     android:textColor="#444444"
-                    android:textColorHint="#999999" />
+                    android:textColorHint="#999999"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/iconFiltroResultado"
@@ -122,56 +119,58 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="16dp"
                     android:src="@android:drawable/ic_menu_sort_by_size"
-                    app:tint="@color/black" />
+                    app:tint="@color/biblio_blue" />
 
             </RelativeLayout>
 
-            <!-- BOTÃO -->
+            <!-- BOTÃO PROCURAR (PILL) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonProcurarResultado"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="26dp"
-                android:layout_marginBottom="22dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="28dp"
                 android:text="Procurar"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="10dp"
-                app:elevation="4dp" />
+                app:cornerRadius="28dp"
+                app:elevation="2dp" />
+
+            <!-- RESULTADOS -->
 
             <!-- CARD LIVRO 1 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="18dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="16dp">
 
                     <!-- CAPA -->
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="110dp"
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="85dp"
+                        android:layout_height="125dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/o_alienista_capa" />
+                        android:src="@drawable/o_alienista_capa"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize8dp" />
 
                     <!-- INFOS -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="16dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
-                        <!-- TOPO -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -184,50 +183,48 @@
                                 android:layout_weight="1"
                                 android:text="O Alienista"
                                 android:textColor="@color/black"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="● ● ●"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@android:drawable/ic_menu_more"
+                                app:tint="#888888" />
 
                         </LinearLayout>
 
-                        <!-- AUTOR -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="por Machado de Assis"
-                            android:textColor="#444444"
-                            android:textSize="14sp" />
+                            android:layout_marginTop="4dp"
+                            android:text="Machado de Assis"
+                            android:textColor="#5F6368"
+                            android:textSize="15sp" />
 
-                        <!-- DATA -->
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="18 dez. 2019"
-                            android:textColor="#666666"
+                            android:text="Clássico da Literatura"
+                            android:textColor="#9AA0A6"
                             android:textSize="13sp" />
 
-                        <!-- BOTÃO -->
+                        <!-- BOTÃO ADICIONAR (ARREDONDADO/PILL) -->
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/buttonAdicionarLista1"
-                            android:layout_width="160dp"
-                            android:layout_height="52dp"
-                            android:layout_marginTop="18dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="16dp"
+                            android:paddingHorizontal="24dp"
                             android:text="Adicionar a Lista"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
                             android:textStyle="bold"
-                            app:backgroundTint="@color/biblio_detalhes"
-                            app:cornerRadius="2dp"
-                            app:strokeColor="@color/black"
-                            app:strokeWidth="1dp" />
+                            app:backgroundTint="@color/biblio_blue"
+                            app:cornerRadius="24dp"
+                            app:elevation="0dp" />
 
                     </LinearLayout>
 
@@ -240,25 +237,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="120dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="16dp">
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="110dp"
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="85dp"
+                        android:layout_height="125dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/o_alienista_capa" />
+                        android:src="@drawable/o_alienista_capa"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize8dp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
+                        android:layout_marginStart="16dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -272,49 +270,50 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="O Alienista"
+                                android:text="Dom Casmurro"
                                 android:textColor="@color/black"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="● ● ●"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@android:drawable/ic_menu_more"
+                                app:tint="#888888" />
 
                         </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="por Machado de Assis"
-                            android:textColor="#444444"
-                            android:textSize="14sp" />
+                            android:layout_marginTop="4dp"
+                            android:text="Machado de Assis"
+                            android:textColor="#5F6368"
+                            android:textSize="15sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="16 set. 2021"
-                            android:textColor="#666666"
+                            android:text="Disponível"
+                            android:textColor="#9AA0A6"
                             android:textSize="13sp" />
 
+                        <!-- BOTÃO ADICIONAR (ARREDONDADO/PILL) -->
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/buttonAdicionarLista2"
-                            android:layout_width="160dp"
-                            android:layout_height="52dp"
-                            android:layout_marginTop="18dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="16dp"
+                            android:paddingHorizontal="24dp"
                             android:text="Adicionar a Lista"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
+                            android:textSize="14sp"
                             android:textStyle="bold"
-                            app:backgroundTint="@color/biblio_detalhes"
-                            app:cornerRadius="2dp"
-                            app:strokeColor="@color/black"
-                            app:strokeWidth="1dp" />
+                            app:backgroundTint="@color/biblio_blue"
+                            app:cornerRadius="24dp"
+                            app:elevation="0dp" />
 
                     </LinearLayout>
 

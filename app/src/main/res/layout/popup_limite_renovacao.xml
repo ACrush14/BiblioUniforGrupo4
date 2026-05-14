@@ -45,7 +45,7 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:backgroundTint="@color/biblio_detalhes"
+        app:backgroundTint="@color/biblio_blue"
         app:cornerRadius="32dp"
         app:elevation="2dp" />
 

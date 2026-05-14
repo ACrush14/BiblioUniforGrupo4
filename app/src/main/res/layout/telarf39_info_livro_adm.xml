@@ -122,85 +122,85 @@
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Língua: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Português" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Editora: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Intrínseca" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dimensão: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15.24 x 0.51 x 22.86 cm" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ISBN-10: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="856356093X" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ISBN-13: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="978-8563560933" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ASIN: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8580572266" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Data: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18 dezembro 2019" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PDF?: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sim" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Braille?: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Não" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Páginas: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="80" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Setor: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="75H.102B" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Idade de leitura: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+12 anos" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Audiobook: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sim" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Edição: " android:textColor="#000000" android:textSize="16sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1a" android:textColor="#333333" android:textSize="16sp" />
-                    <ImageView android:layout_width="16dp" android:layout_height="16dp" android:layout_marginStart="8dp" android:src="@android:drawable/ic_menu_edit" app:tint="#000000" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp" android:padding="2dp" android:src="@drawable/ic_edit_pencil" app:tint="#000000" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:layout_marginBottom="16dp" android:orientation="horizontal" android:gravity="center_vertical">

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER -->
+    <!-- HEADER (Premium Standard) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerSolicitacao"
         android:layout_width="match_parent"
@@ -18,23 +18,24 @@
         <View
             android:layout_width="260dp"
             android:layout_height="260dp"
-            android:layout_marginStart="-120dp"
-            android:layout_marginTop="-120dp"
-            android:alpha="0.15"
+            android:layout_marginStart="-130dp"
+            android:layout_marginTop="-130dp"
+            android:alpha="0.16"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <!-- CAPA -->
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardLivroSolicitacao"
             android:layout_width="120dp"
             android:layout_height="175dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="40dp"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="12dp"
             app:cardElevation="8dp"
+            app:strokeWidth="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -45,15 +46,15 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/o_alienista_capa" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- INFOS -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="48dp"
-            android:layout_marginEnd="18dp"
+            android:layout_marginEnd="32dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cardLivroSolicitacao"
@@ -66,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_livro"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <!-- AUTOR -->
@@ -78,27 +79,28 @@
                 android:text="@string/autor_machado"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:alpha="0.9" />
 
             <!-- GÊNERO -->
             <TextView
                 android:id="@+id/textGeneroLivroSolicitacao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/bg_input_pill"
                 android:backgroundTint="#26FFFFFF"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="5dp"
+                android:paddingVertical="6dp"
                 android:text="@string/genero_ficcao"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTEÚDO -->
+    <!-- CONTEÚDO (Standard Padding 32dp) -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -110,8 +112,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="20dp"
-            android:paddingTop="24dp"
+            android:paddingHorizontal="32dp"
+            android:paddingTop="32dp"
             android:paddingBottom="40dp">
 
             <!-- BOTÃO PDF -->
@@ -126,7 +128,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="8dp"
+                app:cornerRadius="28dp"
                 app:elevation="4dp" />
 
             <!-- BOTÃO BRAILLE -->
@@ -141,7 +143,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="8dp"
+                app:cornerRadius="28dp"
                 app:elevation="4dp" />
 
             <!-- BOTÃO AUDIOBOOK -->
@@ -156,7 +158,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="8dp"
+                app:cornerRadius="28dp"
                 app:elevation="4dp" />
 
             <!-- BOTÃO RESERVAR -->
@@ -171,7 +173,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="8dp"
+                app:cornerRadius="28dp"
                 app:elevation="4dp" />
 
             <!-- BOTÃO SETOR -->
@@ -185,7 +187,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/biblio_blue"
-                app:cornerRadius="8dp"
+                app:cornerRadius="28dp"
                 app:elevation="4dp" />
 
         </LinearLayout>

@@ -5,7 +5,7 @@ class TelaRF332Filtro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.popup_rf33_2_filtro)
+        setContentView(R.layout.popup_filtro_verificar_midia)
 
         // BOTÕES
 
