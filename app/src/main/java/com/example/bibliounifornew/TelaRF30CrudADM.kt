@@ -4,7 +4,7 @@ class TelaRF30CrudADM : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.telarf30_crud_adm)
+        setContentView(R.layout.telarf30_inicial_adm)
 
         // Configuração da Navegação ADM (Barra inferior e topo)
         NavigationUtils.setupAdminNavigation(this)

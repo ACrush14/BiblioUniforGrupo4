@@ -43,9 +43,9 @@
     </string>
     <string name="btn_confirmar">Confirmar</string>
 
-    <string name="btn_solicitar_pdf">Solicitar PDF</string>
-    <string name="btn_solicitar_braile">Solicitar Braile</string>
-    <string name="btn_solicitar_audiobook">Solicitar Audiobook</string>
+    <string name="btn_solicitar_pdf">PDF</string>
+    <string name="btn_solicitar_braile">Braile</string>
+    <string name="btn_solicitar_audiobook">Audiobook</string>
     <string name="btn_reservar">Reservar</string>
     <string name="btn_comprar_amazon">Comprar (Amazon)</string>
     <string name="btn_setor_localizado">Setor Localizado</string>
@@ -183,4 +183,6 @@
     <!-- Misc -->
     <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
 
+    <string name="titulo_alugados">Alugados</string>
+    <string name="email_ronaldo">r.alves.profissional@email.com</string>
 </resources>

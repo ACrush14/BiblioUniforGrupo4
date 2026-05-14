@@ -3,7 +3,7 @@ package com.example.bibliounifornew
 class TelaRF30DashboardADM : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.telarf30_dashboard_adm)
+        setContentView(R.layout.telarf30_crud_adm)
 
         // Padronização da Navegação ADM (Barra inferior e topo)
         NavigationUtils.setupAdminNavigation(this)

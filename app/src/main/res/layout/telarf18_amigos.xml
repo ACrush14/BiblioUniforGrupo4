@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER PREMIUM -->
+    <!-- HEADER -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerAmigos"
         android:layout_width="match_parent"
@@ -14,405 +14,391 @@
         android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- CÍRCULO DECORATIVO -->
+        <!-- CÍRCULO -->
         <View
-            android:layout_width="260dp"
-            android:layout_height="260dp"
-            android:layout_marginStart="-120dp"
-            android:layout_marginTop="-120dp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="-100dp"
+            android:layout_marginTop="-100dp"
             android:alpha="0.15"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- FOTO DO USUÁRIO -->
+        <!-- FOTO -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardFotoUsuarioAmigos"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="40dp"
-            app:cardCornerRadius="55dp"
-            app:cardElevation="8dp"
+            android:id="@+id/cardFotoUsuario"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="44dp"
+            app:cardCornerRadius="46dp"
+            app:cardElevation="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageUsuarioAmigos"
+                android:id="@+id/imageUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/user_placeholder" />
+
         </androidx.cardview.widget.CardView>
 
+        <!-- TÍTULO -->
         <TextView
             android:id="@+id/textTituloAmigos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/titulo_amigos"
+            android:layout_marginTop="18dp"
+            android:text="Amigos"
             android:textColor="@color/white"
-            android:textSize="28sp"
+            android:textSize="26sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardFotoUsuario"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardFotoUsuarioAmigos" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTEÚDO SCROLLÁVEL -->
+    <!-- ÁREA ADICIONAR AMIGOS -->
+    <LinearLayout
+        android:id="@+id/layoutAdicionarAmigos"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/biblio_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@id/headerAmigos">
+
+        <!-- ÍCONE + -->
+        <ImageView
+            android:id="@+id/btnAdicionarAmigo"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@android:drawable/ic_input_add"
+            app:tint="@color/black" />
+
+        <!-- TEXTO -->
+        <TextView
+            android:id="@+id/textAdicionarAmigos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="adicionar amigos"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- LINHA -->
+    <View
+        android:id="@+id/linhaAdicionarAmigos"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#777777"
+        app:layout_constraintTop_toBottomOf="@id/layoutAdicionarAmigos" />
+
+    <!-- SCROLL -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/headerAmigos">
+        app:layout_constraintTop_toBottomOf="@id/linhaAdicionarAmigos"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/white">
 
-            <!-- ÁREA PESQUISA -->
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- ITEM 1 -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
+                android:layout_height="86dp"
+                android:paddingHorizontal="18dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fotoAmigo1"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_placeholder" />
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/textProcurarAmigo"
+                    android:id="@+id/nomeAmigo1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/label_procurar"
-                    android:textColor="@color/biblio_dark"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/btnAdicionarAmigo"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@android:drawable/ic_input_add"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/biblio_dark" />
-
-                <EditText
-                    android:id="@+id/editPesquisarAmigo"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_input_rounded"
-                    android:hint="@string/hint_procure_amigo"
-                    android:paddingHorizontal="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/fotoAmigo1"
+                    android:text="Ronaldo Alves"
                     android:textColor="@color/black"
-                    android:textColorHint="#777777"
-                    android:textSize="14sp"
-                    app:layout_constraintTop_toBottomOf="@id/textProcurarAmigo" />
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/menuAmigo1"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:text="•••"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <!-- LISTA DE AMIGOS -->
-            <LinearLayout
+            </RelativeLayout>
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/white">
+                android:layout_height="2dp"
+                android:background="#777777" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#EEEEEE" />
+            <!-- ITEM 2 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:paddingHorizontal="18dp">
 
-                <!-- ITEM 1: RONALDO -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:paddingHorizontal="20dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fotoAmigo2"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="2dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/friendPhoto1"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_centerVertical="true"
-                        app:cardCornerRadius="28dp"
-                        app:cardElevation="2dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/user_placeholder"
-                            android:scaleType="centerCrop" />
-                    </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_placeholder" />
 
-                    <TextView
-                        android:id="@+id/btnMenuAmigo1"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/menu_opcoes_simbolo"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/bg_circle"
-                        android:backgroundTint="@color/white"
-                        android:elevation="2dp" />
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/friendPhoto1"
-                        android:layout_toStartOf="@id/btnMenuAmigo1"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="@string/amigo_ronaldo"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:ellipsize="end"
-                        android:singleLine="true" />
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/nomeAmigo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/fotoAmigo2"
+                    android:text="Robson Gonçalves"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#DDDDDD" />
+                <TextView
+                    android:id="@+id/menuAmigo2"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:text="•••"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <!-- ITEM 2: ROBSON -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:paddingHorizontal="20dp">
+            </RelativeLayout>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/friendPhoto2"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_centerVertical="true"
-                        app:cardCornerRadius="28dp"
-                        app:cardElevation="2dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/user_placeholder"
-                            android:scaleType="centerCrop" />
-                    </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#777777" />
 
-                    <TextView
-                        android:id="@+id/btnMenuAmigo2"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/menu_opcoes_simbolo"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/bg_circle"
-                        android:backgroundTint="@color/white"
-                        android:elevation="2dp" />
+            <!-- ITEM 3 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:paddingHorizontal="18dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/friendPhoto2"
-                        android:layout_toStartOf="@id/btnMenuAmigo2"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="@string/amigo_robson"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:ellipsize="end"
-                        android:singleLine="true" />
-                </RelativeLayout>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fotoAmigo3"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="2dp">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#DDDDDD" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_placeholder" />
 
-                <!-- ITEM 3: VITORIA -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:paddingHorizontal="20dp">
+                </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/friendPhoto3"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_centerVertical="true"
-                        app:cardCornerRadius="28dp"
-                        app:cardElevation="2dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/user_placeholder"
-                            android:scaleType="centerCrop" />
-                    </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/nomeAmigo3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/fotoAmigo3"
+                    android:text="Vitoria Ferreira"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/btnMenuAmigo3"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/menu_opcoes_simbolo"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/bg_circle"
-                        android:backgroundTint="@color/white"
-                        android:elevation="2dp" />
+                <TextView
+                    android:id="@+id/menuAmigo3"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:text="•••"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/friendPhoto3"
-                        android:layout_toStartOf="@id/btnMenuAmigo3"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="@string/amigo_vitoria"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:ellipsize="end"
-                        android:singleLine="true" />
-                </RelativeLayout>
+            </RelativeLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#DDDDDD" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#777777" />
 
-                <!-- ITEM 4: MARTA -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:paddingHorizontal="20dp">
+            <!-- ITEM 4 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:paddingHorizontal="18dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/friendPhoto4"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_centerVertical="true"
-                        app:cardCornerRadius="28dp"
-                        app:cardElevation="2dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/user_placeholder"
-                            android:scaleType="centerCrop" />
-                    </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fotoAmigo4"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="2dp">
 
-                    <TextView
-                        android:id="@+id/btnMenuAmigo4"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/menu_opcoes_simbolo"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/bg_circle"
-                        android:backgroundTint="@color/white"
-                        android:elevation="2dp" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_placeholder" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/friendPhoto4"
-                        android:layout_toStartOf="@id/btnMenuAmigo4"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="@string/amigo_marta"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:ellipsize="end"
-                        android:singleLine="true" />
-                </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#DDDDDD" />
+                <TextView
+                    android:id="@+id/nomeAmigo4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/fotoAmigo4"
+                    android:text="Marta Viana"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-                <!-- ITEM 5: ADRIANO -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:paddingHorizontal="20dp">
+                <TextView
+                    android:id="@+id/menuAmigo4"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:text="•••"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/friendPhoto5"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_centerVertical="true"
-                        app:cardCornerRadius="28dp"
-                        app:cardElevation="2dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/user_placeholder"
-                            android:scaleType="centerCrop" />
-                    </androidx.cardview.widget.CardView>
+            </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/btnMenuAmigo5"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/menu_opcoes_simbolo"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/bg_circle"
-                        android:backgroundTint="@color/white"
-                        android:elevation="2dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#777777" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/friendPhoto5"
-                        android:layout_toStartOf="@id/btnMenuAmigo5"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:text="@string/amigo_adriano"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:ellipsize="end"
-                        android:singleLine="true" />
-                </RelativeLayout>
+            <!-- ITEM 5 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:paddingHorizontal="18dp">
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#DDDDDD" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fotoAmigo5"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="2dp">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_placeholder" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/nomeAmigo5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/fotoAmigo5"
+                    android:text="Adriano de Souza"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/menuAmigo5"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/white"
+                    android:elevation="2dp"
+                    android:gravity="center"
+                    android:text="•••"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#777777" />
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

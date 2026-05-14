@@ -6,77 +6,90 @@
     android:layout_height="match_parent"
     android:background="#F4F6F8">
 
-    <View
-        android:id="@+id/bgHeader"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:background="#50C4C9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- HEADER -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerInfoLivroAdm"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@color/biblio_detalhes"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imgBookCoverDetail"
-        android:layout_width="110dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        <!-- CÍRCULO -->
+        <View
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="-90dp"
+            android:layout_marginTop="-90dp"
+            android:alpha="0.16"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtBookTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:text="O Alienista"
-        android:textColor="#FFFFFF"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imgBookCoverDetail"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imgBookCoverDetail"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/o_alienista_capa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtBookAuthor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:text="Machado de Assis"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imgBookCoverDetail"
-        app:layout_constraintTop_toBottomOf="@id/txtBookTitle" />
+        <TextView
+            android:id="@+id/txtBookTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            android:text="O Alienista"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgBookCoverDetail"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnVoltar"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#50C4C9"
-        android:text="Voltar"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/imgBookCoverDetail"
-        app:layout_constraintTop_toBottomOf="@id/txtBookAuthor" />
+        <TextView
+            android:id="@+id/txtBookAuthor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:text="Machado de Assis"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgBookCoverDetail"
+            app:layout_constraintTop_toBottomOf="@id/txtBookTitle" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/biblio_blue"
+            android:text="Voltar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imgBookCoverDetail"
+            app:layout_constraintTop_toBottomOf="@id/txtBookAuthor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavADM"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bgHeader">
+        app:layout_constraintTop_toBottomOf="@id/headerInfoLivroAdm">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -263,55 +276,13 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/bottomNavADM"
+    <!-- BARRA ADM PADRONIZADA -->
+    <FrameLayout
+        android:id="@+id/bottomNavContainer"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#FFFFFF"
-        android:elevation="10dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:id="@+id/navDashboard"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="14dp"
-            android:src="@android:drawable/ic_menu_view"/>
-
-        <ImageView
-            android:id="@+id/navFinanceiro"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="14dp"
-            android:src="@android:drawable/ic_menu_manage"/>
-
-        <ImageView
-            android:id="@+id/navSolicitacoes"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="14dp"
-            android:src="@android:drawable/ic_menu_help"/>
-
-        <ImageView
-            android:id="@+id/navLivrosADM"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="14dp"
-            android:src="@android:drawable/ic_menu_agenda"/>
-
-        <ImageView
-            android:id="@+id/navUsuarios"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="14dp"
-            android:src="@android:drawable/ic_menu_myplaces"/>
-
-    </LinearLayout>
+        <include layout="@layout/bottom_navigation_adm" />
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
