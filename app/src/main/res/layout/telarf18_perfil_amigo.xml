@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F7">
+    android:background="@color/biblio_bg">
 
-    <!-- HEADER AZUL CIANO COM FOTO -->
+    <!-- HEADER -->
     <LinearLayout
         android:id="@+id/headerPerfilAmigo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#6EC1C3"
+        android:layout_height="230dp"
+        android:background="@color/biblio_detalhes"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingBottom="24dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+        <!-- CÍRCULO DECORATIVO -->
+        <View
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="-260dp"
+            android:layout_marginTop="-120dp"
+            android:alpha="0.18"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imgPerfilAmigo"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                android:background="@android:color/white"
-                android:padding="2dp"
+        <!-- FOTO -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFotoPerfilAmigo"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="-90dp"
+            app:cardCornerRadius="55dp"
+            app:cardElevation="6dp">
+
+            <ImageView
+                android:id="@+id/imagePerfilAmigo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
-        </RelativeLayout>
+                android:src="@drawable/user_placeholder" />
 
+        </androidx.cardview.widget.CardView>
+
+        <!-- EMAIL -->
         <TextView
-            android:id="@+id/txtNomeHeader"
+            android:id="@+id/textEmailPerfilAmigo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Nome do Usuário"
-            android:textColor="@android:color/black"
+            android:layout_marginTop="18dp"
+            android:text="marquinhos@gmail.com"
+            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtUserHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@usuario"
-            android:textColor="#333333"
-            android:textSize="16sp" />
-
     </LinearLayout>
 
+    <!-- CONTEÚDO -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/headerPerfilAmigo"
         app:layout_constraintBottom_toBottomOf="parent">
 
@@ -63,84 +69,122 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:paddingHorizontal="22dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="40dp">
 
-            <!-- Nome -->
+            <!-- NOME -->
             <TextView
+                android:id="@+id/textTituloNomePerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome:"
-                android:textColor="#1B3434"
-                android:textSize="16sp"
+                android:text="Nome"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtNomePerfilAmigo"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNomePerfil"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input_pill"
-                android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:text="Nome do Amigo"
-                android:textColor="#555555" />
+                android:layout_height="58dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="2dp">
 
-            <!-- Usuário -->
+                <TextView
+                    android:id="@+id/textNomePerfilAmigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:text="Marcos Antônio"
+                    android:textColor="#444444"
+                    android:textSize="16sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- USUÁRIO -->
             <TextView
+                android:id="@+id/textTituloUsuarioPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Usuario:"
-                android:textColor="#1B3434"
-                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:text="Usuário"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtUserPerfilAmigo"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardUsuarioPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input_pill"
-                android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:text="@usuario"
-                android:textColor="#555555" />
+                android:layout_height="58dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="30dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="2dp">
 
-            <!-- Bio -->
+                <TextView
+                    android:id="@+id/textUsuarioPerfilAmigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="18dp"
+                    android:text="Marquinhoss302890"
+                    android:textColor="#444444"
+                    android:textSize="16sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- BIO -->
             <TextView
+                android:id="@+id/textTituloBioPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Bio:"
-                android:textColor="#1B3434"
-                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:text="Bio"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtBioPerfilAmigo"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBioPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="100dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_input_pill"
-                android:gravity="top"
-                android:padding="16dp"
-                android:text="Descrição do perfil aqui..."
-                android:textColor="#555555" />
+                android:layout_height="140dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="18dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="2dp">
 
-            <!-- Botão Adicionar Amigo -->
+                <TextView
+                    android:id="@+id/textBioPerfilAmigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:padding="18dp"
+                    android:text="Ler é legal."
+                    android:textColor="#444444"
+                    android:textSize="16sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- BOTÃO -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAcaoAmigo"
+                android:id="@+id/buttonAdicionarAmigoPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginTop="32dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="28dp"
                 android:text="Adicionar Amigo"
                 android:textAllCaps="false"
-                android:textSize="16sp"
-                app:backgroundTint="#6EC1C3"
-                app:cornerRadius="12dp" />
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/biblio_detalhes"
+                app:cornerRadius="12dp"
+                app:elevation="2dp" />
 
         </LinearLayout>
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
