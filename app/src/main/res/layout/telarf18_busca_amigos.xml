@@ -1,98 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7F7">
+    android:background="@color/biblio_bg">
 
-    <!-- HEADER AZUL CIANO -->
+    <!-- HEADER -->
     <LinearLayout
         android:id="@+id/headerBuscaAmigos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#6EC1C3"
+        android:layout_height="220dp"
+        android:background="@color/biblio_detalhes"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- CÍRCULO DECORATIVO -->
+        <View
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="-260dp"
+            android:layout_marginTop="-120dp"
+            android:alpha="0.18"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white" />
+
+        <!-- TÍTULO -->
         <TextView
+            android:id="@+id/textTituloBuscaAmigo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginTop="-40dp"
             android:text="Adicionar Amigo"
-            android:textColor="@android:color/black"
-            android:textSize="22sp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
+    <!-- CONTEÚDO TOPO -->
     <LinearLayout
-        android:id="@+id/llBuscaTop"
+        android:id="@+id/layoutTopoBusca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="18dp"
         android:orientation="vertical"
-        android:padding="24dp"
         app:layout_constraintTop_toBottomOf="@id/headerBuscaAmigos">
 
-        <!-- Campo de Pesquisa com Filtro (3 barrinhas) -->
+        <!-- INPUT -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPesquisaAmigo"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="2dp">
+
+            <EditText
+                android:id="@+id/editBuscarAmigo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="Marcos"
+                android:paddingHorizontal="18dp"
+                android:textColor="@color/black"
+                android:textColorHint="#777777"
+                android:textSize="15sp"
+                android:inputType="textPersonName" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- BOTÃO -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBuscarAmigo"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="28dp"
+            android:text="Procurar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/biblio_detalhes"
+            app:cornerRadius="12dp"
+            app:elevation="2dp" />
+
+    </LinearLayout>
+
+    <!-- RESULTADOS -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/layoutTopoBusca"
+        app:layout_constraintBottom_toBottomOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="30dp">
 
-            <EditText
-                android:id="@+id/etSearchBuscaAmigo"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_input_pill"
-                android:hint="escreva aqui o nome do usuario"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:textSize="14sp"
-                android:inputType="text" />
+            <!-- ITEM 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:background="@color/biblio_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
 
-            <ImageView
-                android:id="@+id/btnFiltroBuscaAmigo"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="12dp"
-                android:src="@android:drawable/ic_menu_sort_by_size"
-                android:contentDescription="Filtro"
-                app:tint="#1B3434" />
+                <!-- FOTO -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_placeholder" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- NOME -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:text="Marcos Antônio"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- BOTÃO + -->
+                <TextView
+                    android:id="@+id/buttonAdicionarResultado1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- LINHA -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#6F6F6F" />
+
+            <!-- ITEM 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:background="@color/biblio_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <!-- FOTO -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="2dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_placeholder" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- NOME -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:text="Marcos Ferreira"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- BOTÃO + -->
+                <TextView
+                    android:id="@+id/buttonAdicionarResultado2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- LINHA -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#6F6F6F" />
+
         </LinearLayout>
 
-        <!-- Botão Procurar -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnProcurarBuscaAmigo"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="16dp"
-            android:text="Procurar"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            app:backgroundTint="#6EC1C3"
-            app:cornerRadius="12dp" />
-
-        <TextView
-            android:id="@+id/txtResultadosBusca"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Resultados:"
-            android:textColor="#1B3434"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBuscaAmigos"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/llBuscaTop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_amigo_busca" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

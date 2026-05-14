@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutPopupRemoverHistorico"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/biblio_bg"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="28dp"
+    android:paddingBottom="22dp">
+
+    <!-- TÍTULO -->
+    <TextView
+        android:id="@+id/textTituloPopupRemoverHistorico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ATENÇÃO!"
+        android:textColor="#C95050"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- MENSAGEM -->
+    <TextView
+        android:id="@+id/textMensagemPopupRemoverHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:text='Tem certeza que deseja remover o livro "O Ceifador" do seu histórico?'
+        android:textColor="#C95050"
+        android:textSize="20sp" />
+
+    <!-- BOTÃO -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPopupRemoverHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:text="Remover do Histórico"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="#C95050"
+        app:cornerRadius="30dp"
+        app:elevation="2dp" />
+
+    <!-- CANCELAR -->
+    <TextView
+        android:id="@+id/textCancelarPopupRemoverHistorico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Cancelar"
+        android:textColor="#C95050"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -102,12 +102,83 @@
     <string name="btn_salvar_alteracoes">Salvar Alterações</string>
 
     <!-- Navigation Short Labels/Descriptions -->
+    <string name="label_meus_livros">Meus Livros</string>
+    <string name="label_lido">Status: Lido</string>
+    <string name="label_nao_lido">Status: Não Lido</string>
+    <string name="label_lendo">Status: Lendo</string>
+    <string name="btn_remover">Remover</string>
+    <string name="label_alugado">Alugado</string>
+    <string name="titulo_minha_lista_desejo">Minha Lista de Desejo</string>
+    <string name="btn_sua_livraria">Sua Livraria</string>
+    <string name="btn_alugar_livro">Alugar Livro</string>
+    <string name="label_fora_estoque">Fora de Estoque</string>
+    <string name="label_sociedade_anel">A Sociedade do Anel</string>
+    <string name="label_vidas_secas">Vidas Secas</string>
+    <string name="autor_graciliano">Graciliano Ramos</string>
+    <string name="data_exemplo_1">18 dez. 2019</string>
+    <string name="data_exemplo_2">16 set. 2021</string>
+    <string name="data_exemplo_3">23 mar. 2018</string>
+
     <string name="nav_home">Home</string>
     <string name="nav_carrinho">Carrinho</string>
     <string name="nav_busca">Busca</string>
     <string name="nav_favoritos">Favoritos</string>
     <string name="nav_lista">Lista</string>
     <string name="nav_usuario">Usuário</string>
+
+    <!-- RF18 Amigos -->
+    <string name="titulo_amigos">Amigos</string>
+    <string name="label_notificacoes">Notificações</string>
+    <string name="notif_lida">Lida</string>
+    <string name="tempo_hoje">16:50</string>
+    <string name="tempo_ontem">há 1 dia</string>
+
+    <!-- Notificações Exemplos -->
+    <string name="titulo_ceifador">O Ceifador</string>
+    <string name="autor_ceifador">Neal Shusterman</string>
+    <string name="msg_ceifador">Seu livro da lista de desejos está de volta ao estoque!</string>
+
+    <string name="titulo_senhor_aneis_notif">O Senhor dos Anéis</string>
+    <string name="autor_tolkien">J. R. R. Tolkien</string>
+    <string name="msg_vencimento">Atenção! O vencimento do seu aluguel está próximo.</string>
+
+    <string name="label_procurar">Procurar</string>
+    <string name="hint_procure_amigo">Procure um amigo</string>
+    <string name="amigo_ronaldo">Ronaldo Alves</string>
+    <string name="amigo_robson">Robson Gonçalves</string>
+    <string name="amigo_vitoria">Vitoria Ferreira</string>
+    <string name="amigo_marta">Marta Viana</string>
+    <string name="amigo_adriano">Adriano de Souza</string>
+    <string name="menu_opcoes_simbolo">•••</string>
+
+    <!-- RF19 Status Aluguel -->
+    <string name="titulo_livros_alugados">Livros Alugados</string>
+    <string name="label_validade_aluguel">Validade do Aluguel:</string>
+    <string name="data_exemplo_aluguel">10 de agosto de 2026.</string>
+    <string name="label_dias_vencimento">Dias para o Vencimento:</string>
+    <string name="dias_exemplo_vencimento">5 dias.</string>
+    <string name="btn_renovar_aluguel">Renovar Aluguel</string>
+
+    <!-- RF20 Solicitações -->
+    <string name="autor_machado">Machado de Assis</string>
+    <string name="genero_ficcao">Ficção Psicológica</string>
+
+    <!-- RF20 Confirmação Solicitação -->
+    <string name="titulo_confirmacao_biblioteca">Solicitação Concluída!</string>
+    <string name="desc_confirmacao_biblioteca">Sua solicitação foi enviada para a biblioteca.\nVocê será notificado quando o material estiver pronto para retirada.</string>
+    <string name="label_aguarde_dias">Tempo estimado: %1$d dias</string>
+    <string name="btn_voltar_biblioteca">Voltar para a Biblioteca</string>
+    <string name="desc_icone_sucesso">Ícone de solicitação concluída com sucesso</string>
+
+    <!-- RF20 Termos e Condições -->
+    <string name="titulo_termos">Termos e Condições</string>
+    <string name="label_aceitar_termos">Eu aceito os termos e condições</string>
+    <string name="btn_continuar">Continuar</string>
+
+    <!-- RF22 Histórico -->
+    <string name="hint_pesquisa">Pesquisa</string>
+    <string name="status_vidas_secas">Solicitado aluguel de Vidas Secas (14 de mar.)</string>
+    <string name="status_ceifador">Solicitado aluguel de O Ceifador (5 de mar.)</string>
 
     <!-- Misc -->
     <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>

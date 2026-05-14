@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/biblio_bg"
+    android:paddingTop="26dp">
+
+    <!-- TEXTO SUPERIOR -->
+    <TextView
+        android:id="@+id/textLivroSetor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Setor do livro: O Alienista"
+        android:textColor="@color/biblio_blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- SETOR -->
+    <TextView
+        android:id="@+id/textSetorLocalizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Setor X"
+        android:textColor="@color/biblio_blue"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textLivroSetor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- BOTÃO -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonVoltarSetor"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="34dp"
+        android:text="Voltar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/biblio_blue"
+        app:cornerRadius="0dp"
+        app:elevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/textSetorLocalizado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
