@@ -189,8 +189,8 @@
                             <ImageView
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:src="@android:drawable/ic_menu_more"
-                                app:tint="#888888" />
+                                android:src="@drawable/ic_menu_more"
+                                app:tint="@color/biblio_blue" />
 
                         </LinearLayout>
 
@@ -224,7 +224,7 @@
                             android:textStyle="bold"
                             app:backgroundTint="@color/biblio_blue"
                             app:cornerRadius="24dp"
-                            app:elevation="0dp" />
+                            app:elevation="2dp" />
 
                     </LinearLayout>
 
@@ -278,8 +278,8 @@
                             <ImageView
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:src="@android:drawable/ic_menu_more"
-                                app:tint="#888888" />
+                                android:src="@drawable/ic_menu_more"
+                                app:tint="@color/biblio_blue" />
 
                         </LinearLayout>
 
@@ -313,7 +313,7 @@
                             android:textStyle="bold"
                             app:backgroundTint="@color/biblio_blue"
                             app:cornerRadius="24dp"
-                            app:elevation="0dp" />
+                            app:elevation="2dp" />
 
                     </LinearLayout>
 

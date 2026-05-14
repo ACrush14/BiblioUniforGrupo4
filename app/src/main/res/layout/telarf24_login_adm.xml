@@ -13,14 +13,25 @@
 
         <!-- Fundo decorativo Premium -->
         <View
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="-100dp"
-            android:layout_marginTop="-100dp"
-            android:alpha="0.2"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="-130dp"
+            android:layout_marginTop="-130dp"
+            android:alpha="0.16"
             android:background="@drawable/bg_circle"
-            android:backgroundTint="@color/biblio_detalhes"
+            android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginEnd="-90dp"
+            android:layout_marginTop="-40dp"
+            android:alpha="0.10"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Logo -->
@@ -85,7 +96,7 @@
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/bg_input_pill"
             android:hint="Digite seu e-mail"
             android:inputType="textEmailAddress"
@@ -93,7 +104,7 @@
             android:textColor="@color/biblio_blue"
             android:textColorHint="#9E9E9E"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/textBemVindoAdm"
+            app:layout_constraintTop_toBottomOf="@id/textErroAdm"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -133,7 +144,7 @@
                 android:contentDescription="@string/desc_mostrar_ocultar_senha"
                 android:focusable="true"
                 android:padding="12dp"
-                android:src="@android:drawable/ic_menu_view"
+                android:src="@drawable/ic_eye_minimal"
                 app:tint="@color/biblio_blue" />
         </RelativeLayout>
 

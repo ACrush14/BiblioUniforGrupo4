@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="Parabéns!"
             android:textColor="@color/biblio_blue"
-            android:textSize="32sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <!-- ================================================== -->

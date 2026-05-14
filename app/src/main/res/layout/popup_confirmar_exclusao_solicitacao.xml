@@ -80,7 +80,8 @@
                     android:layout_height="24dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@android:drawable/ic_menu_view"
+                    android:src="@drawable/ic_eye_minimal"
+                    app:tint="@color/biblio_blue"
                     app:tint="#8A8A8A" />
 
             </RelativeLayout>

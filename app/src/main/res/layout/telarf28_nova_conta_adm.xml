@@ -188,7 +188,8 @@
                 android:contentDescription="@string/desc_mostrar_ocultar_senha"
                 android:focusable="true"
                 android:padding="12dp"
-                android:src="@android:drawable/ic_menu_view"
+                android:src="@drawable/ic_eye_minimal"
+                app:tint="@color/biblio_blue"
                 app:tint="@color/biblio_blue" />
         </RelativeLayout>
 
@@ -228,7 +229,8 @@
                 android:contentDescription="@string/desc_mostrar_ocultar_senha"
                 android:focusable="true"
                 android:padding="12dp"
-                android:src="@android:drawable/ic_menu_view"
+                android:src="@drawable/ic_eye_minimal"
+                app:tint="@color/biblio_blue"
                 app:tint="@color/biblio_blue" />
         </RelativeLayout>
 
