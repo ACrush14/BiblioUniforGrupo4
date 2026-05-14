@@ -88,7 +88,7 @@
             android:layout_marginTop="4dp"
             android:text="Livros vencidos"
             android:textColor="@color/white"
-            android:textSize="32sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -230,7 +230,8 @@
                                     android:id="@+id/iconMais"
                                     android:layout_width="26dp"
                                     android:layout_height="26dp"
-                                    android:src="@android:drawable/ic_menu_more"
+                                    android:src="@drawable/ic_menu_more"
+                                    app:tint="@color/biblio_blue"
                                     tools:ignore="ContentDescription" />
 
                             </LinearLayout>

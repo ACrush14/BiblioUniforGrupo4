@@ -38,8 +38,8 @@
             android:id="@+id/btnMaisAmigo"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@android:drawable/ic_menu_more"
-            app:tint="#888888" />
+            android:src="@drawable/ic_menu_more"
+            app:tint="@color/biblio_blue" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
