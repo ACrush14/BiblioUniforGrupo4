@@ -6,34 +6,38 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER -->
-    <LinearLayout
+    <!-- HEADER (Premium Standard) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerPerfilAmigo"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="240dp"
         android:background="@color/biblio_detalhes"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- CÍRCULO DECORATIVO -->
         <View
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:layout_marginStart="-260dp"
-            android:layout_marginTop="-120dp"
-            android:alpha="0.18"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="-130dp"
+            android:layout_marginTop="-130dp"
+            android:alpha="0.16"
             android:background="@drawable/bg_circle"
-            android:backgroundTint="@color/white" />
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- FOTO -->
-        <androidx.cardview.widget.CardView
+        <!-- FOTO PERFIL (Circular Standard) -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardFotoPerfilAmigo"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:layout_marginTop="-90dp"
+            android:layout_marginTop="40dp"
             app:cardCornerRadius="55dp"
-            app:cardElevation="6dp">
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imagePerfilAmigo"
@@ -42,23 +46,26 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/user_placeholder" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- EMAIL -->
         <TextView
             android:id="@+id/textEmailPerfilAmigo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             android:text="marquinhos@gmail.com"
             android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardFotoPerfilAmigo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTEÚDO -->
-    <ScrollView
+    <!-- CONTEÚDO (Standard Padding 32dp) -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -69,8 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="22dp"
-            android:paddingTop="22dp"
+            android:paddingHorizontal="32dp"
+            android:paddingTop="24dp"
             android:paddingBottom="40dp">
 
             <!-- NOME -->
@@ -79,30 +86,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nome"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textColor="#1B3434"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardNomePerfil"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="30dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardElevation="2dp">
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
 
                 <TextView
                     android:id="@+id/textNomePerfilAmigo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:paddingHorizontal="18dp"
+                    android:paddingHorizontal="24dp"
                     android:text="Marcos Antônio"
-                    android:textColor="#444444"
+                    android:textColor="#415E5E"
                     android:textSize="16sp" />
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- USUÁRIO -->
             <TextView
@@ -111,30 +118,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Usuário"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textColor="#1B3434"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardUsuarioPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="30dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardElevation="2dp">
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
 
                 <TextView
                     android:id="@+id/textUsuarioPerfilAmigo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:paddingHorizontal="18dp"
+                    android:paddingHorizontal="24dp"
                     android:text="Marquinhoss302890"
-                    android:textColor="#444444"
+                    android:textColor="#415E5E"
                     android:textSize="16sp" />
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- BIO -->
             <TextView
@@ -143,48 +150,48 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Bio"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textColor="#1B3434"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardBioPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="18dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardElevation="2dp">
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
 
                 <TextView
                     android:id="@+id/textBioPerfilAmigo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="top"
-                    android:padding="18dp"
+                    android:padding="16dp"
                     android:text="Ler é legal."
-                    android:textColor="#444444"
+                    android:textColor="#415E5E"
                     android:textSize="16sp" />
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <!-- BOTÃO -->
+            <!-- BOTÃO ADICIONAR (Pill Standard) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonAdicionarAmigoPerfil"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="28dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
                 android:text="Adicionar Amigo"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                app:backgroundTint="@color/biblio_detalhes"
-                app:cornerRadius="12dp"
-                app:elevation="2dp" />
+                app:backgroundTint="@color/biblio_blue"
+                app:cornerRadius="28dp"
+                app:elevation="4dp" />
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

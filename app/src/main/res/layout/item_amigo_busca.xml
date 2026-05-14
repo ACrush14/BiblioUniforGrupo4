@@ -37,10 +37,11 @@
         <!-- Botão de adicionar (+) -->
         <ImageView
             android:id="@+id/btnMaisAmigo"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_input_add"
-            app:tint="#6EC1C3" />
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_add_plus"
+            app:tint="@color/biblio_blue" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

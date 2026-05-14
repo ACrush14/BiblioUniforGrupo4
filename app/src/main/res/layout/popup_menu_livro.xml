@@ -18,7 +18,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:backgroundTint="@color/biblio_detalhes"
+        app:backgroundTint="@color/biblio_blue"
         app:cornerRadius="30dp"
         app:elevation="2dp" />
 

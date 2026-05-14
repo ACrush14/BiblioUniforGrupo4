@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER -->
+    <!-- HEADER PREMIUM (240dp height) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerDashboardAdm"
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- CÍRCULO -->
+        <!-- CÍRCULO DECORATIVO -->
         <View
             android:layout_width="220dp"
             android:layout_height="220dp"
@@ -26,27 +26,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- CONFIG -->
+        <!-- CONFIG ICON -->
         <ImageView
             android:id="@+id/iconConfigAdm"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_marginStart="22dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="50dp"
             android:src="@android:drawable/ic_menu_manage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/biblio_dark" />
+            app:tint="@color/white" />
 
-        <!-- FOTO -->
-        <androidx.cardview.widget.CardView
+        <!-- FOTO PERFIL (Material Circle) -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardFotoAdm"
             android:layout_width="82dp"
             android:layout_height="82dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="24dp"
             app:cardCornerRadius="41dp"
-            app:cardElevation="4dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -56,43 +57,44 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/user_placeholder" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- BEM VINDO -->
+        <!-- TEXTOS HEADER -->
         <TextView
             android:id="@+id/textBemVindoAdm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bem vindo"
+            android:layout_marginTop="12dp"
+            android:text="Bem-vindo,"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold"
+            android:alpha="0.9"
             app:layout_constraintTop_toBottomOf="@id/cardFotoAdm"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- DASHBOARD -->
         <TextView
             android:id="@+id/textDashboardAdm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DASHBOARD DE ADM"
+            android:layout_marginTop="8dp"
+            android:text="DASHBOARD ADM"
             android:textColor="@color/white"
             android:textSize="28sp"
             android:textStyle="bold"
+            android:letterSpacing="0.02"
             app:layout_constraintTop_toBottomOf="@id/textBemVindoAdm"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="18dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- CONTEÚDO -->
+    <!-- CONTEÚDO SCROLLABLE -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
+        android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/headerDashboardAdm"
         app:layout_constraintBottom_toTopOf="@id/bottomNavAdm">
 
@@ -100,32 +102,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingHorizontal="14dp"
-            android:paddingTop="14dp"
-            android:paddingBottom="20dp">
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="32dp">
 
-            <!-- CARD 1 -->
-            <androidx.cardview.widget.CardView
+            <!-- CARD 1: ESTATÍSTICAS RÁPIDAS -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                app:cardCornerRadius="14dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
+                app:strokeWidth="0dp"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
-                    <!-- LINHA -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- USUÁRIOS -->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -136,8 +137,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Usuários"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
+                                android:textColor="#415E5E"
+                                android:textSize="14sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -145,13 +146,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
                                 android:text="5.785"
-                                android:textColor="@color/black"
+                                android:textColor="@color/biblio_blue"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
 
-                        <!-- ALUGUÉIS -->
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -161,9 +160,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Alugueis"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
+                                android:text="Aluguéis"
+                                android:textColor="#415E5E"
+                                android:textSize="14sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -171,471 +170,415 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="4dp"
                                 android:text="342"
-                                android:textColor="@color/black"
+                                android:textColor="@color/biblio_blue"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
-
                     </LinearLayout>
 
-                    <!-- BOTÃO -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/buttonCrudAdm"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Tela CRUD"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Gerenciar Dados (CRUD)"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
                         app:backgroundTint="@color/biblio_blue"
-                        app:cornerRadius="8dp" />
-
+                        app:cornerRadius="24dp"
+                        app:elevation="2dp" />
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 2 -->
-            <androidx.cardview.widget.CardView
+            <!-- CARD 2: ANÁLISE -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                app:cardCornerRadius="14dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
+                app:strokeWidth="0dp"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Análise de Alugueis"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:text="Análise de Aluguéis"
+                        android:textColor="@color/biblio_blue"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <!-- LINHAS -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="16dp"
                         android:orientation="vertical">
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Março 2026"
-                                android:textColor="@color/black"
-                                android:textSize="17sp"
-                                android:textStyle="bold" />
-
+                                android:textColor="#415E5E"
+                                android:textSize="16sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="342"
                                 android:textColor="@color/black"
-                                android:textSize="22sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Fevereiro 2026"
-                                android:textColor="@color/black"
-                                android:textSize="17sp"
-                                android:textStyle="bold" />
-
+                                android:textColor="#415E5E"
+                                android:textSize="16sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="294"
                                 android:textColor="@color/black"
-                                android:textSize="22sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Janeiro 2026"
-                                android:textColor="@color/black"
-                                android:textSize="17sp"
-                                android:textStyle="bold" />
-
+                                android:textColor="#415E5E"
+                                android:textSize="16sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="648"
                                 android:textColor="@color/black"
-                                android:textSize="22sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
-
                     </LinearLayout>
 
-                    <!-- BOTÃO -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/buttonVerAlugueis"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Ver Alugueis"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Relatório Completo"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
                         app:backgroundTint="@color/biblio_blue"
-                        app:cornerRadius="8dp" />
-
+                        app:cornerRadius="24dp"
+                        app:elevation="2dp" />
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 3 -->
-            <androidx.cardview.widget.CardView
+            <!-- CARD 3: ATRASOS -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                app:cardCornerRadius="14dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
+                app:strokeWidth="0dp"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Atrasos"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:text="Atrasos Críticos"
+                        android:textColor="@color/biblio_red"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <!-- LINHAS -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="16dp"
                         android:orientation="vertical">
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="João bobo"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
+                                android:text="João Bobo"
+                                android:textColor="#415E5E"
+                                android:textSize="16sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="15 dias"
-                                android:textColor="@color/black"
+                                android:textColor="@color/biblio_red"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Roberta sá"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
+                                android:text="Roberta Sá"
+                                android:textColor="#415E5E"
+                                android:textSize="16sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="3 dias"
-                                android:textColor="@color/black"
+                                android:textColor="@color/biblio_red"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
-
                     </LinearLayout>
 
-                    <!-- BOTÃO -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/buttonVerAtrasos"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Ver todos os atrasos"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Gerenciar Atrasos"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
                         app:backgroundTint="@color/biblio_blue"
-                        app:cornerRadius="8dp" />
-
+                        app:cornerRadius="24dp"
+                        app:elevation="2dp" />
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 4 -->
-            <androidx.cardview.widget.CardView
+            <!-- CARD 4: CADASTROS -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                app:cardCornerRadius="14dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
+                app:strokeWidth="0dp"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Cadastros para confirmar"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:text="Aguardando Confirmação"
+                        android:textColor="@color/biblio_blue"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <!-- NOMES -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="16dp"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Jéssica Amaral"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:paddingVertical="4dp"
+                            android:text="• Jéssica Amaral"
+                            android:textColor="#415E5E"
+                            android:textSize="16sp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Jeferson da Rocha"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:paddingVertical="4dp"
+                            android:text="• Jeferson da Rocha"
+                            android:textColor="#415E5E"
+                            android:textSize="16sp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Roberto de Souza"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
+                            android:paddingVertical="4dp"
+                            android:text="• Roberto de Souza"
+                            android:textColor="#415E5E"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
-                    <!-- BOTÃO -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/buttonVerCadastros"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Ver cadastros"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Validar Cadastros"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
                         app:backgroundTint="@color/biblio_blue"
-                        app:cornerRadius="8dp" />
-
+                        app:cornerRadius="24dp"
+                        app:elevation="2dp" />
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <!-- CARD 5 -->
-            <androidx.cardview.widget.CardView
+            <!-- CARD 5: SOLICITAÇÕES -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="14dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="4dp"
+                app:strokeWidth="0dp"
                 app:cardBackgroundColor="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="20dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Solicitações"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:text="Solicitações Pendentes"
+                        android:textColor="@color/biblio_blue"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
-                    <!-- ITENS -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="16dp"
                         android:orientation="vertical">
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="O Jardim das Ilusões"
-                                android:textColor="@color/black"
+                                android:textColor="#415E5E"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="PDF"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
+                                android:textColor="@color/biblio_blue"
+                                android:textSize="13sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Vozes do Deserto"
-                                android:textColor="@color/black"
+                                android:textColor="#415E5E"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Braille"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
+                                android:textColor="@color/biblio_blue"
+                                android:textSize="13sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
 
-                        <!-- ITEM -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:orientation="horizontal">
-
+                            android:orientation="horizontal"
+                            android:paddingVertical="4dp">
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Um Homem Chamado Ove"
-                                android:textColor="@color/black"
+                                android:textColor="#415E5E"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Comprar"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
+                                android:text="Compra"
+                                android:textColor="@color/biblio_blue"
+                                android:textSize="13sp"
                                 android:textStyle="bold" />
-
                         </LinearLayout>
-
                     </LinearLayout>
 
-                    <!-- BOTÃO -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/buttonVerSolicitacoes"
                         android:layout_width="match_parent"
-                        android:layout_height="46dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Ver solicitações"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Ver Solicitações"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
                         app:backgroundTint="@color/biblio_blue"
-                        app:cornerRadius="8dp" />
-
+                        app:cornerRadius="24dp"
+                        app:elevation="2dp" />
                 </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
     </ScrollView>
 
-    <!-- NAV -->
+    <!-- NAV BAR -->
     <include
         android:id="@+id/bottomNavAdm"
         layout="@layout/bottom_navigation_adm"

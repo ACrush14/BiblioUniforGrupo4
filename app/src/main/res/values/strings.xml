@@ -185,4 +185,54 @@
 
     <string name="titulo_alugados">Alugados</string>
     <string name="email_ronaldo">r.alves.profissional@email.com</string>
+
+    <!-- Accessibility Descriptions -->
+    <string name="desc_aumentar_exemplares">Aumentar quantidade de exemplares</string>
+    <string name="desc_diminuir_exemplares">Diminuir quantidade de exemplares</string>
+
+    <!-- Popups -->
+    <string name="titulo_filtrar_midia">Filtrar Mídia</string>
+    <string name="hint_nome_titulo">Nome do título</string>
+    <string name="hint_nome_autor">Nome do autor...</string>
+    <string name="hint_isbn">ISBN...</string>
+    <string name="btn_salvar_filtro">Salvar Filtro</string>
+    <string name="btn_limpar_filtragem">Limpar Filtragem</string>
+
+    <string name="titulo_escolha_data">Escolha a data de publicação</string>
+    <string name="label_selecionar_data">Selecionar data</string>
+    <string name="label_data_exemplo">Seg, 17 Ago</string>
+    <string name="label_mes_ano_exemplo">Agosto 2026</string>
+    <string name="desc_editar_data">Editar data</string>
+    <string name="desc_mes_anterior">Mês anterior</string>
+    <string name="desc_proximo_mes">Próximo mês</string>
+
+    <!-- RF35 Cadastro de Livro -->
+    <string name="titulo_adicionar_midia">Adicionar Mídia</string>
+    <string name="label_titulo">Título:</string>
+    <string name="label_autor">Autor:</string>
+    <string name="label_isbn">Código ISBN:</string>
+    <string name="label_data_publicacao_livro">Data de publicação do Livro:</string>
+    <string name="label_quantidade_exemplares">Quantidade de Exemplares</string>
+    <string name="hint_quantidade_exemplares">Quantidade de Exemplares...</string>
+    <string name="btn_editar_mais_infos">Editar mais informações</string>
+    <string name="erro_preencha_campos">? Preencha todos os campos\n   para continuar</string>
+
+    <string name="titulo_adicionar_midia_extras">Adicionar Mídia - Extras</string>
+    <string name="label_quantidade_paginas">Quantidade de Páginas:</string>
+    <string name="hint_quantidade_paginas">Quantidade de Páginas...</string>
+    <string name="label_categoria">Categoria:</string>
+    <string name="hint_categoria">Categoria...</string>
+    <string name="label_editora">Editora:</string>
+    <string name="hint_editora">Editora...</string>
+    <string name="label_link_capa">Link da Imagem de Capa:</string>
+    <string name="hint_link">link...</string>
+    <string name="label_sinopse">Sinopse:</string>
+    <string name="hint_sinopse">Sinopse...</string>
+
+    <string name="label_arquivo_pdf">Arquivo PDF:</string>
+    <string name="hint_pdf">PDF...</string>
+    <string name="label_arquivo_audiobook">Arquivo Audiobook:</string>
+    <string name="hint_audiobook">Audiobook...</string>
+    <string name="label_disponivel_braille">Disponível em Braille</string>
+    <string name="btn_salvar_novo_livro">Salvar novo livro</string>
 </resources>

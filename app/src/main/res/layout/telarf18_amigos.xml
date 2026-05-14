@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/biblio_bg">
 
-    <!-- HEADER -->
+    <!-- HEADER (Premium Standard) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headerAmigos"
         android:layout_width="match_parent"
@@ -14,26 +14,27 @@
         android:background="@color/biblio_detalhes"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- CÍRCULO -->
+        <!-- CÍRCULO DECORATIVO -->
         <View
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:layout_marginStart="-100dp"
-            android:layout_marginTop="-100dp"
-            android:alpha="0.15"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="-130dp"
+            android:layout_marginTop="-130dp"
+            android:alpha="0.16"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- FOTO -->
-        <androidx.cardview.widget.CardView
+        <!-- FOTO USUÁRIO (Circular) -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardFotoUsuario"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
-            android:layout_marginTop="44dp"
-            app:cardCornerRadius="46dp"
-            app:cardElevation="5dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="40dp"
+            app:cardCornerRadius="55dp"
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -45,17 +46,17 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/user_placeholder" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- TÍTULO -->
         <TextView
             android:id="@+id/textTituloAmigos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             android:text="Amigos"
             android:textColor="@color/white"
-            android:textSize="26sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/cardFotoUsuario"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,73 +64,78 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- ÁREA ADICIONAR AMIGOS -->
-    <LinearLayout
+    <!-- ÁREA ADICIONAR AMIGOS (Pill Aesthetic) -->
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/layoutAdicionarAmigos"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/biblio_bg"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="20dp"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="0dp"
         app:layout_constraintTop_toBottomOf="@id/headerAmigos">
 
-        <!-- ÍCONE + -->
-        <ImageView
-            android:id="@+id/btnAdicionarAmigo"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:src="@android:drawable/ic_input_add"
-            app:tint="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@color/white">
 
-        <!-- TEXTO -->
-        <TextView
-            android:id="@+id/textAdicionarAmigos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="adicionar amigos"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/btnAdicionarAmigo"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_add_plus"
+                app:tint="@color/biblio_blue" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textAdicionarAmigos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Adicionar Amigos"
+                android:textColor="@color/biblio_blue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <!-- LINHA -->
-    <View
-        android:id="@+id/linhaAdicionarAmigos"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="#777777"
-        app:layout_constraintTop_toBottomOf="@id/layoutAdicionarAmigos" />
+        </LinearLayout>
 
-    <!-- SCROLL -->
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- SCROLL AREA -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/linhaAdicionarAmigos"
+        app:layout_constraintTop_toBottomOf="@id/layoutAdicionarAmigos"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/white">
+            android:paddingHorizontal="32dp"
+            android:paddingBottom="40dp">
 
             <!-- ITEM 1 -->
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="86dp"
-                android:paddingHorizontal="18dp">
+                android:layout_height="80dp">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/fotoAmigo1"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_centerVertical="true"
-                    app:cardCornerRadius="28dp"
-                    app:cardElevation="2dp">
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -137,55 +143,66 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/user_placeholder" />
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/nomeAmigo1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@id/fotoAmigo1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="Ronaldo Alves"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/menuAmigo1"
-                    android:layout_width="46dp"
-                    android:layout_height="46dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/bg_circle"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:text="•••"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/menuAmigo1"
+                    app:layout_constraintStart_toEndOf="@id/fotoAmigo1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-            </RelativeLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/menuAmigo1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="•••"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#777777" />
+                android:layout_height="1dp"
+                android:alpha="0.1"
+                android:background="@color/black" />
 
             <!-- ITEM 2 -->
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="86dp"
-                android:paddingHorizontal="18dp">
+                android:layout_height="80dp">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/fotoAmigo2"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_centerVertical="true"
-                    app:cardCornerRadius="28dp"
-                    app:cardElevation="2dp">
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -193,55 +210,66 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/user_placeholder" />
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/nomeAmigo2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@id/fotoAmigo2"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="Robson Gonçalves"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/menuAmigo2"
-                    android:layout_width="46dp"
-                    android:layout_height="46dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/bg_circle"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:text="•••"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/menuAmigo2"
+                    app:layout_constraintStart_toEndOf="@id/fotoAmigo2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-            </RelativeLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/menuAmigo2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="•••"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#777777" />
+                android:layout_height="1dp"
+                android:alpha="0.1"
+                android:background="@color/black" />
 
             <!-- ITEM 3 -->
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="86dp"
-                android:paddingHorizontal="18dp">
+                android:layout_height="80dp">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/fotoAmigo3"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_centerVertical="true"
-                    app:cardCornerRadius="28dp"
-                    app:cardElevation="2dp">
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -249,55 +277,66 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/user_placeholder" />
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/nomeAmigo3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@id/fotoAmigo3"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="Vitoria Ferreira"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/menuAmigo3"
-                    android:layout_width="46dp"
-                    android:layout_height="46dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/bg_circle"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:text="•••"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/menuAmigo3"
+                    app:layout_constraintStart_toEndOf="@id/fotoAmigo3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-            </RelativeLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/menuAmigo3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="•••"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#777777" />
+                android:layout_height="1dp"
+                android:alpha="0.1"
+                android:background="@color/black" />
 
             <!-- ITEM 4 -->
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="86dp"
-                android:paddingHorizontal="18dp">
+                android:layout_height="80dp">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/fotoAmigo4"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_centerVertical="true"
-                    app:cardCornerRadius="28dp"
-                    app:cardElevation="2dp">
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -305,55 +344,66 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/user_placeholder" />
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/nomeAmigo4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@id/fotoAmigo4"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="Marta Viana"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/menuAmigo4"
-                    android:layout_width="46dp"
-                    android:layout_height="46dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/bg_circle"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:text="•••"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/menuAmigo4"
+                    app:layout_constraintStart_toEndOf="@id/fotoAmigo4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-            </RelativeLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/menuAmigo4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="•••"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#777777" />
+                android:layout_height="1dp"
+                android:alpha="0.1"
+                android:background="@color/black" />
 
             <!-- ITEM 5 -->
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="86dp"
-                android:paddingHorizontal="18dp">
+                android:layout_height="80dp">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/fotoAmigo5"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:layout_centerVertical="true"
-                    app:cardCornerRadius="28dp"
-                    app:cardElevation="2dp">
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -361,41 +411,50 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/user_placeholder" />
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
                 <TextView
                     android:id="@+id/nomeAmigo5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_toEndOf="@id/fotoAmigo5"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:text="Adriano de Souza"
                     android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/menuAmigo5"
-                    android:layout_width="46dp"
-                    android:layout_height="46dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/bg_circle"
-                    android:backgroundTint="@color/white"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:text="•••"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/menuAmigo5"
+                    app:layout_constraintStart_toEndOf="@id/fotoAmigo5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-            </RelativeLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/menuAmigo5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="•••"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#777777" />
+                android:layout_height="1dp"
+                android:alpha="0.1"
+                android:background="@color/black" />
 
         </LinearLayout>
 

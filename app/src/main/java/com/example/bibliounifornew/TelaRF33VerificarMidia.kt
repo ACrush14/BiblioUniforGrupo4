@@ -1,4 +1,10 @@
-package com.example.bibliounifornew 
+package com.example.bibliounifornew
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 
 class TelaRF33VerificarMidia : AppCompatActivity() {
 
@@ -10,12 +16,12 @@ class TelaRF33VerificarMidia : AppCompatActivity() {
         // BOTÕES DA TELA
         // =========================
 
-        val btnFiltro = findViewById<ImageView>(R.id.btnFiltro)
-        val btnSolicitacoesUsuario = findViewById<Button>(R.id.btnSolicitacoesUsuario)
-        val btnEnviarAudio = findViewById<Button>(R.id.btnEnviarAudio)
-        val btnEnviarPdf = findViewById<Button>(R.id.btnEnviarPdf)
-        val btnBraille = findViewById<Button>(R.id.btnBraille)
-        val btnExcluirSolicitacao = findViewById<Button>(R.id.btnExcluirSolicitacao)
+        val btnFiltro = findViewById<ImageView>(R.id.buttonFiltroMidia)
+        val btnSolicitacoesUsuario = findViewById<Button>(R.id.buttonVerSolicitacoesUsuario)
+        val btnEnviarAudio = findViewById<Button>(R.id.buttonEnviarAudiobook)
+        val btnEnviarPdf = findViewById<Button>(R.id.buttonEnviarPDF)
+        val btnBraille = findViewById<Button>(R.id.buttonBrailleConcluido)
+        val btnExcluirSolicitacao = findViewById<Button>(R.id.buttonExcluirSolicitacao)
 
         // =========================
         // ABRIR POPUPS
@@ -31,20 +37,20 @@ class TelaRF33VerificarMidia : AppCompatActivity() {
         }
 
         btnEnviarAudio.setOnClickListener {
-            startActivity(Intent(this, TelaRF335UsuarioNotificado::class.java))
+            startActivity(Intent(this, PopupNotificacaoBrailleConcluido::class.java))
         }
 
         btnEnviarPdf.setOnClickListener {
             // Reutiliza o popup de notificação conforme padrão
-            startActivity(Intent(this, TelaRF335UsuarioNotificado::class.java))
+            startActivity(Intent(this, PopupNotificacaoBrailleConcluido::class.java))
         }
 
         btnBraille.setOnClickListener {
-            startActivity(Intent(this, TelaRF336BrailleConcluido::class.java))
+            startActivity(Intent(this, PopupNotificacaoBrailleConcluido::class.java))
         }
 
         btnExcluirSolicitacao.setOnClickListener {
-            startActivity(Intent(this, TelaRF337ExcluirSolicitacao::class.java))
+            startActivity(Intent(this, PopupConfirmarExclusaoSolicitacao::class.java))
         }
 
         // =========================
