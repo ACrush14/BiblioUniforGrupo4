@@ -1,4 +1,6 @@
-package com.example.bibliounifornew 
+package com.example.bibliounifornew
+
+import com.example.bibliounifornew.login.TelaRF02Intermediaria
 
 class TelaRF40ConfigADM : AppCompatActivity() {
 

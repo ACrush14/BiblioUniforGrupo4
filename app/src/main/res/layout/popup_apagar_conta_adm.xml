@@ -47,7 +47,7 @@
                 android:gravity="center"
                 android:lineSpacingExtra="2dp"
                 android:text="Essa ação não poderá ser desfeita.\nDigite sua senha atual."
-                android:textColor="#6F6F6F"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <!-- INPUT -->
@@ -76,7 +76,7 @@
                     android:inputType="textPassword"
                     android:paddingHorizontal="14dp"
                     android:textColor="@color/black"
-                    android:textColorHint="#9A9A9A"
+                    android:textColorHint="@color/biblio_detalhes"
                     android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>

@@ -81,8 +81,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_eye_minimal"
-                    app:tint="@color/biblio_blue"
-                    app:tint="#8A8A8A" />
+                    app:tint="@color/biblio_detalhes" />
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>

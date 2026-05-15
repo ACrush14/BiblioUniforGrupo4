@@ -581,7 +581,6 @@
     <!-- NAV BAR -->
     <include
         android:id="@+id/bottomNavAdm"
-        layout="@layout/bottom_navigation_adm"
         android:layout_width="match_parent"
         android:layout_height="74dp"
         app:layout_constraintBottom_toBottomOf="parent" />

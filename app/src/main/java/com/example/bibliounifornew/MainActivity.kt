@@ -1,4 +1,7 @@
-package com.example.bibliounifornew 
+package com.example.bibliounifornew
+
+import com.example.bibliounifornew.login.TelaRF02Intermediaria
+import com.example.bibliounifornew.usuario.TelaRF08DashboardUsuario
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(this, TelaRF30DashboardADM::class.java))
                 } else {
                     // Aqui deve-se garantir que TelaRF09DashboardUsuario também esteja no pacote correto
-                    startActivity(Intent(this, TelaRF09DashboardUsuario::class.java))
+                    startActivity(Intent(this, TelaRF08DashboardUsuario::class.java))
                 }
             }
 

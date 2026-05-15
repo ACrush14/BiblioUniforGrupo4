@@ -3,6 +3,13 @@ package com.example.bibliounifornew
 import android.app.Activity
 import android.content.Intent
 import android.widget.ImageView
+import com.example.bibliounifornew.usuario.TelaRF08DashboardUsuario
+import com.example.bibliounifornew.usuario.TelaRF09Configuracao
+import com.example.bibliounifornew.usuario.TelaRF11TelaDePesquisa
+import com.example.bibliounifornew.usuario.TelaRF15MinhaLivrariaActivity
+import com.example.bibliounifornew.usuario.TelaRF16ListaDesejosActivity
+import com.example.bibliounifornew.usuario.TelaRF17Amigos
+import com.example.bibliounifornew.usuario.TelaRF21Notificacoes
 
 object NavigationUtils {
 
@@ -11,27 +18,27 @@ object NavigationUtils {
     fun setupBottomNavigation(activity: Activity) {
         // 1. Casa -> RF09
         activity.findViewById<ImageView>(R.id.navHome)?.setOnClickListener {
-            if (activity !is TelaRF09DashboardUsuario) {
-                activity.startActivity(Intent(activity, TelaRF09DashboardUsuario::class.java))
+            if (activity !is TelaRF08DashboardUsuario) {
+                activity.startActivity(Intent(activity, TelaRF08DashboardUsuario::class.java))
             }
         }
         // 2. Tenda -> RF16
         activity.findViewById<ImageView>(R.id.navLivraria)?.setOnClickListener {
-            if (activity !is TelaRF16MinhaLivrariaActivity) {
-                activity.startActivity(Intent(activity, TelaRF16MinhaLivrariaActivity::class.java))
+            if (activity !is TelaRF15MinhaLivrariaActivity) {
+                activity.startActivity(Intent(activity, TelaRF15MinhaLivrariaActivity::class.java))
             }
         }
         // 3. Lupa -> RF12
         activity.findViewById<ImageView>(R.id.navSearch)?.setOnClickListener {
-            if (activity !is TelaRF12TelaDePesquisa) {
-                activity.startActivity(Intent(activity, TelaRF12TelaDePesquisa::class.java))
+            if (activity !is TelaRF11TelaDePesquisa) {
+                activity.startActivity(Intent(activity, TelaRF11TelaDePesquisa::class.java))
             }
         }
         // 4. Coração/Desejos -> RF17
         val navDesejos = activity.findViewById<ImageView>(R.id.navDesejos) ?: activity.findViewById<ImageView>(R.id.navFavorites)
         navDesejos?.setOnClickListener {
-            if (activity !is TelaRF17ListaDesejosActivity) {
-                activity.startActivity(Intent(activity, TelaRF17ListaDesejosActivity::class.java))
+            if (activity !is TelaRF16ListaDesejosActivity) {
+                activity.startActivity(Intent(activity, TelaRF16ListaDesejosActivity::class.java))
             }
         }
         // 5. Livro -> RF19
@@ -44,8 +51,8 @@ object NavigationUtils {
         // 6. Pessoa -> RF18
         val navAmigos = activity.findViewById<ImageView>(R.id.navAmigos) ?: activity.findViewById<ImageView>(R.id.navFriends)
         navAmigos?.setOnClickListener {
-            if (activity !is TelaRF18) {
-                activity.startActivity(Intent(activity, TelaRF18::class.java))
+            if (activity !is TelaRF17Amigos) {
+                activity.startActivity(Intent(activity, TelaRF17Amigos::class.java))
             }
         }
     }
@@ -59,8 +66,8 @@ object NavigationUtils {
         }
         // Engrenagem -> Configurações (RF10)
         activity.findViewById<ImageView>(R.id.btnConfig)?.setOnClickListener {
-            if (activity !is TelaRF10Configuracao) {
-                activity.startActivity(Intent(activity, TelaRF10Configuracao::class.java))
+            if (activity !is TelaRF09Configuracao) {
+                activity.startActivity(Intent(activity, TelaRF09Configuracao::class.java))
             }
         }
     }
