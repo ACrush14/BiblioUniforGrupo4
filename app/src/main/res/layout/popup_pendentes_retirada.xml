@@ -85,7 +85,7 @@
             android:textColor="@color/white"
             android:textSize="13sp"
             android:textStyle="bold"
-            app:backgroundTint="#D9534F"
+            app:backgroundTint="@color/biblio_red"
             app:cornerRadius="30dp"
             app:elevation="0dp"
             app:rippleColor="#40FFFFFF" />
