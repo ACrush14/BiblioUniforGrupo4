@@ -9,56 +9,62 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bibliounifornew.R
-import com.example.bibliounifornew.usuario.TelaRF08DashboardUsuario
+import com.example.bibliounifornew.adm.TelaRF28DashboardADM
 
-class TelaRF03LoginAluno : AppCompatActivity() {
+class TelaRF23LoginADM : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.telarf03_loginaluno)
+        setContentView(R.layout.telarf23_login_adm)
 
         // CAMPOS
-        val email = findViewById<EditText>(R.id.editEmail)
-        val senha = findViewById<EditText>(R.id.editSenha)
+        val email = findViewById<EditText>(R.id.editEmailAdm)
+        val senha = findViewById<EditText>(R.id.editSenhaAdm)
+        val credential = findViewById<EditText>(R.id.editCredencialAdm)
+
 
         // BOTÃO
-        val botaoEntrar = findViewById<Button>(R.id.buttonEntrar)
+        val botaoEntrar = findViewById<Button>(R.id.buttonEntrarAdm)
 
         // TEXTOS
-        val erro = findViewById<TextView>(R.id.textErroLogin)
-        val criarConta = findViewById<TextView>(R.id.textCriarConta)
-        val esqueceuSenha = findViewById<TextView>(R.id.textEsqueceuSenha)
+        val erro = findViewById<TextView>(R.id.textErroAdm)
+        val criarConta = findViewById<TextView>(R.id.textCriarContaAdm)
+        val esqueceuSenha = findViewById<TextView>(R.id.textEsqueceuSenhaAdm)
 
         // LOGIN
         botaoEntrar.setOnClickListener {
 
             val textoEmail = email.text.toString().trim()
             val textoSenha = senha.text.toString().trim()
+            val textoCredencial = credential.text.toString().trim()
 
             erro.visibility = View.GONE
 
-            // Base de dados mockada
-            val usuariosValidos = mapOf(
-                "teste@email.com" to "12345678",
-                "anderson.link.crush@hotmail.com" to "123456"
-            )
-
             when {
-                textoEmail.isEmpty() || textoSenha.isEmpty() -> {
+
+                textoEmail.isEmpty() || textoSenha.isEmpty() || textoCredencial.isEmpty() -> {
                     erro.text = "Preencha todos os campos"
                     erro.visibility = View.VISIBLE
                 }
 
-                usuariosValidos[textoEmail] != textoSenha -> {
-                    erro.text = "E-mail ou senha incorretos"
+                textoEmail != "a" ||
+                        textoSenha != "b" ||
+                        textoCredencial != "c" -> {
+
+                    erro.text = "E-mail, senha ou credencial incorretos"
                     erro.visibility = View.VISIBLE
                 }
 
                 else -> {
-                    Toast.makeText(this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, TelaRF08DashboardUsuario::class.java)
+                    Toast.makeText(
+                        this,
+                        "Login realizado com sucesso!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    val intent = Intent(this, TelaRF28DashboardADM::class.java)
                     startActivity(intent)
-                    finish() // Opcional: encerra a tela de login para não voltar a ela ao apertar 'back'
+                    finish()
                 }
             }
         }

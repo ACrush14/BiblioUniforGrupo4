@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bibliounifornew.NavigationUtils
 import com.example.bibliounifornew.R
-import com.example.bibliounifornew.usuario.TelaRF20SolicitacoesTermosCondicoes
 
 class TelaRF19Solicitacoes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +26,7 @@ class TelaRF19Solicitacoes : AppCompatActivity() {
 
         // 2. Configurar apenas o botão PDF para levar aos Termos e Condições
         btnPdf.setOnClickListener {
-            val intent = Intent(this, TelaRF20SolicitacoesTermosCondicoes::class.java)
+            val intent = Intent(this, TelaRF19SolicitacoesTermosCondicoes::class.java)
             startActivity(intent)
         }
 

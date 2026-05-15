@@ -5,8 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bibliounifornew.R
-import com.example.bibliounifornew.login.TelaRF03LoginAluno
-import com.example.bibliounifornew.TelaRF24
+import com.example.bibliounifornew.login.TelaRF23LoginADM
 import com.google.android.material.button.MaterialButton
 
 class TelaRF02Intermediaria : AppCompatActivity() {
@@ -25,7 +24,7 @@ class TelaRF02Intermediaria : AppCompatActivity() {
         }
 
         botaoAdmin.setOnClickListener {
-            val intent = Intent(this, TelaRF24::class.java)
+            val intent = Intent(this, TelaRF23LoginADM::class.java)
             val options = ActivityOptions.makeCustomAnimation(this, android.R.anim.fade_in, android.R.anim.fade_out)
             startActivity(intent, options.toBundle())
         }

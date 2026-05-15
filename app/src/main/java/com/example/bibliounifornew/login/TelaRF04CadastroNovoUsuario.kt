@@ -1,5 +1,6 @@
 package com.example.bibliounifornew.login
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
@@ -97,22 +98,24 @@ class TelaRF04CadastroNovoUsuario : AppCompatActivity() {
                             senha = senha
                         )
                     )
-                    mostrarPopupSucesso()
+                    mostrarPopUpSucesso()
                 }
             }
         }
     }
 
-    private fun mostrarPopupSucesso() {
-        val dialogView = LayoutInflater.from(this).inflate(R.layout.popup_sucesso_cadastro, null)
-        val dialog = AlertDialog.Builder(this, R.style.CustomAlertDialog)
-            .setView(dialogView)
-            .setCancelable(false)
-            .create()
+    private fun mostrarPopUpSucesso() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.popup_sucesso_cadastro)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.setCancelable(false)
 
-        dialogView.findViewById<Button>(R.id.btnRetorneLogin).setOnClickListener {
+        // BOTÃO DO POPUP
+        val botaoRetornar = dialog.findViewById<Button>(R.id.btnRetorneLogin)
+
+        botaoRetornar.setOnClickListener {
             dialog.dismiss()
-            irParaLogin()
+            finish()
         }
         dialog.show()
     }

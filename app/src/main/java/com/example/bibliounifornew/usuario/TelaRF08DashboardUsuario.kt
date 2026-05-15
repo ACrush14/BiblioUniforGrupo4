@@ -7,9 +7,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bibliounifornew.MainActivity
 import com.example.bibliounifornew.R
-import com.example.bibliounifornew.usuario.TelaRF17Amigos
-import com.example.bibliounifornew.usuario.TelaRF21Notificacoes
-import com.example.bibliounifornew.TelaRF22Historico
 import com.google.android.material.button.MaterialButton
 
 class TelaRF08DashboardUsuario : AppCompatActivity() {
@@ -38,7 +35,7 @@ class TelaRF08DashboardUsuario : AppCompatActivity() {
         }
 
         btnNotificacao.setOnClickListener {
-            startActivity(Intent(this, TelaRF21Notificacoes::class.java))
+            startActivity(Intent(this, TelaRF20Notificacoes::class.java))
         }
 
         // Ações Rápidas
@@ -59,7 +56,7 @@ class TelaRF08DashboardUsuario : AppCompatActivity() {
         }
 
         btnHistorico.setOnClickListener {
-            startActivity(Intent(this, TelaRF22Historico::class.java))
+            startActivity(Intent(this, TelaRF21Historico::class.java))
         }
 
         btnStatusAluguel.setOnClickListener {

@@ -3,13 +3,26 @@ package com.example.bibliounifornew
 import android.app.Activity
 import android.content.Intent
 import android.widget.ImageView
+import com.example.bibliounifornew.adm.TelaRF28DashboardADM
+import com.example.bibliounifornew.adm.TelaRF29GerenciamentoDeUsuarios
+import com.example.bibliounifornew.adm.TelaRF30UsuariosParaADM
+import com.example.bibliounifornew.adm.TelaRF31Solicitacoes
+import com.example.bibliounifornew.adm.TelaRF32LivrosCRUD
+import com.example.bibliounifornew.adm.TelaRF33CadastroDeLivros
+import com.example.bibliounifornew.adm.TelaRF34FinanceiroADM
+import com.example.bibliounifornew.adm.TelaRF33InfosAdicionais
+import com.example.bibliounifornew.adm.TelaRF33Versoes
+import com.example.bibliounifornew.adm.TelaRF35ConfirmarCadastroADM
+import com.example.bibliounifornew.adm.TelaRF36ListaAlugueisADM
+import com.example.bibliounifornew.adm.TelaRF37InfoLivroADM
+import com.example.bibliounifornew.adm.TelaRF38ConfigADM
 import com.example.bibliounifornew.usuario.TelaRF08DashboardUsuario
 import com.example.bibliounifornew.usuario.TelaRF09Configuracao
 import com.example.bibliounifornew.usuario.TelaRF11TelaDePesquisa
 import com.example.bibliounifornew.usuario.TelaRF15MinhaLivrariaActivity
 import com.example.bibliounifornew.usuario.TelaRF16ListaDesejosActivity
 import com.example.bibliounifornew.usuario.TelaRF17Amigos
-import com.example.bibliounifornew.usuario.TelaRF21Notificacoes
+import com.example.bibliounifornew.usuario.TelaRF20Notificacoes
 
 object NavigationUtils {
 
@@ -60,8 +73,8 @@ object NavigationUtils {
     fun setupTopBar(activity: Activity) {
         // Sino -> Notificações (RF21)
         activity.findViewById<ImageView>(R.id.btnNotificacao)?.setOnClickListener {
-            if (activity !is TelaRF21Notificacoes) {
-                activity.startActivity(Intent(activity, TelaRF21Notificacoes::class.java))
+            if (activity !is TelaRF20Notificacoes) {
+                activity.startActivity(Intent(activity, TelaRF20Notificacoes::class.java))
             }
         }
         // Engrenagem -> Configurações (RF10)
@@ -87,32 +100,32 @@ object NavigationUtils {
         val navUsuarios = activity.findViewById<ImageView>(R.id.navGerenciarUsuariosAdm) ?: activity.findViewById<ImageView>(R.id.navUsuarios)
 
         navDashboard?.setOnClickListener {
-            if (activity !is TelaRF30DashboardADM) {
-                activity.startActivity(Intent(activity, TelaRF30DashboardADM::class.java))
+            if (activity !is TelaRF28DashboardADM) {
+                activity.startActivity(Intent(activity, TelaRF28DashboardADM::class.java))
             }
         }
 
         navFinanceiro?.setOnClickListener {
-            if (activity !is TelaRF36FinanceiroADM) {
-                activity.startActivity(Intent(activity, TelaRF36FinanceiroADM::class.java))
+            if (activity !is TelaRF34FinanceiroADM) {
+                activity.startActivity(Intent(activity, TelaRF34FinanceiroADM::class.java))
             }
         }
 
         navSolicitacoes?.setOnClickListener {
-            if (activity !is TelaRF33VerificarMidia && activity !is TelaRF33Solicitacoes) {
+            if (activity !is TelaRF33VerificarMidia && activity !is TelaRF31Solicitacoes) {
                 activity.startActivity(Intent(activity, TelaRF33VerificarMidia::class.java))
             }
         }
 
         navLivrosADM?.setOnClickListener {
-            if (activity !is TelaRF34LivrosCRUD && activity !is TelaRF42VerificarMidia) {
-                activity.startActivity(Intent(activity, TelaRF34LivrosCRUD::class.java))
+            if (activity !is TelaRF32LivrosCRUD && activity !is TelaRF42VerificarMidia) {
+                activity.startActivity(Intent(activity, TelaRF32LivrosCRUD::class.java))
             }
         }
 
         navUsuarios?.setOnClickListener {
-            if (activity !is TelaRF31GerenciamentoDeUsuarios) {
-                activity.startActivity(Intent(activity, TelaRF31GerenciamentoDeUsuarios::class.java))
+            if (activity !is TelaRF29GerenciamentoDeUsuarios) {
+                activity.startActivity(Intent(activity, TelaRF29GerenciamentoDeUsuarios::class.java))
             }
         }
 
@@ -121,8 +134,8 @@ object NavigationUtils {
 
     fun setupAdminTopBar(activity: Activity) {
         activity.findViewById<ImageView>(R.id.btnConfigAdm)?.setOnClickListener {
-            if (activity !is TelaRF40ConfigADM) {
-                activity.startActivity(Intent(activity, TelaRF40ConfigADM::class.java))
+            if (activity !is TelaRF38ConfigADM) {
+                activity.startActivity(Intent(activity, TelaRF38ConfigADM::class.java))
             }
         }
     }
@@ -140,14 +153,14 @@ object NavigationUtils {
         listOf(navHome, navFin, navSol, navMidia, navUser).forEach { it?.setColorFilter(inactiveColor) }
 
         when (activity) {
-            is TelaRF30DashboardADM -> navHome?.setColorFilter(activeColor)
-            is TelaRF36FinanceiroADM -> navFin?.setColorFilter(activeColor)
-            is TelaRF33VerificarMidia, is TelaRF33Solicitacoes -> navSol?.setColorFilter(activeColor)
-            is TelaRF42VerificarMidia, is TelaRF34LivrosCRUD, is TelaRF35CadastroDeLivros,
-            is TelaRF35_3InfosAdicionais, is TelaRF35_4Versoes, is TelaRF38ListaAlugueisADM,
-            is TelaRF39InfoLivroADM, is TelaAlugadosUsuarioADM -> navMidia?.setColorFilter(activeColor)
-            is TelaRF31GerenciamentoDeUsuarios, is TelaRF32UsuariosParaADM,
-            is TelaRF37ConfirmarCadastroADM -> navUser?.setColorFilter(activeColor)
+            is TelaRF28DashboardADM -> navHome?.setColorFilter(activeColor)
+            is TelaRF34FinanceiroADM -> navFin?.setColorFilter(activeColor)
+            is TelaRF33VerificarMidia, is TelaRF31Solicitacoes -> navSol?.setColorFilter(activeColor)
+            is TelaRF42VerificarMidia, is TelaRF32LivrosCRUD, is TelaRF33CadastroDeLivros,
+            is TelaRF33InfosAdicionais, is TelaRF33Versoes, is TelaRF36ListaAlugueisADM,
+            is TelaRF37InfoLivroADM, is TelaAlugadosUsuarioADM -> navMidia?.setColorFilter(activeColor)
+            is TelaRF29GerenciamentoDeUsuarios, is TelaRF30UsuariosParaADM,
+            is TelaRF35ConfirmarCadastroADM -> navUser?.setColorFilter(activeColor)
         }
     }
 }

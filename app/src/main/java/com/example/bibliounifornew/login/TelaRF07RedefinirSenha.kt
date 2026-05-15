@@ -18,13 +18,16 @@ class TelaRF07RedefinirSenha : AppCompatActivity() {
 
         val editSenhaNova = findViewById<EditText>(R.id.editSenhaNova)
         val editConfirmarSenha = findViewById<EditText>(R.id.editConfirmarSenha)
-        val btnConfirmar = findViewById<Button>(R.id.editConfirmarSenha)
+        val btnConfirmar = findViewById<EditText>(R.id.editConfirmarSenha)
 
-        val textErroDiferente = findViewById<TextView>(R.id.textErroDiferente)
-        val textErroRequisitos = findViewById<TextView>(R.id.textErroSenha2)
+        val textErroDiferente = findViewById<TextView>(R.id.textErroSenhaDiferente)
+        val textErroIgual = findViewById<TextView>(R.id.textErroSenhaIgual)
+        val textErroRequisitos = findViewById<TextView>(R.id.textRegrasSenha)
 
         // Inicializa erros como invisíveis ou cor padrão
         textErroDiferente.visibility = View.GONE
+        textErroIgual.visibility = View.GONE
+        textErroRequisitos.visibility = View.GONE
 
         btnConfirmar.setOnClickListener {
             val senhanova = editSenhaNova.text.toString()
@@ -34,14 +37,7 @@ class TelaRF07RedefinirSenha : AppCompatActivity() {
             val senhasIguais = senhanova == confirmarsenha
 
             if (senhaValida && senhasIguais) {
-                // Simulação de atualização no Banco de Dados
-                Toast.makeText(this, "Senha redefinida com sucesso", Toast.LENGTH_LONG).show()
-
-                // Vai para a tela de login
-                val intent = Intent(this, TelaRF03LoginAluno::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-                finish()
+                mostrarPopupSucesso()
             } else {
                 if (!senhasIguais) {
                     textErroDiferente.visibility = View.VISIBLE
@@ -66,5 +62,31 @@ class TelaRF07RedefinirSenha : AppCompatActivity() {
         val temMaiuscula = senha.any { it.isUpperCase() }
         val temNumero = senha.any { it.isDigit() }
         return temOitoDigitos && temMaiuscula && temNumero
+    }
+
+    private fun mostrarPopupSucesso() {
+
+        val dialog = android.app.Dialog(this)
+
+        dialog.setContentView(R.layout.popup_confirmar_redefinir_senha)
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        // BOTÃO DO POPUP
+        val botaoRetornar =
+            dialog.findViewById<Button>(R.id.btnRetornarLogin)
+
+        botaoRetornar.setOnClickListener {
+
+            val intent = Intent(this, TelaRF03LoginAluno::class.java)
+
+            startActivity(intent)
+
+            dialog.dismiss()
+
+            finish()
+        }
+
+        dialog.show()
     }
 }
